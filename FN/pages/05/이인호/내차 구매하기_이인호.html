@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/common.css">
+
+    <style>
+        .wrapper {
+            margin: 0 100px 0 100px;
+        }
+
+        .wrapper>header{}
+
+        .wrapper>header>.top-heaer{}
+
+        .wrapper>header>nav{}
+
+        /* 메인 메뉴 전체 */
+        .wrapper>header>nav>ul.main-menu{
+            /* background-color: aqua; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .wrapper>header>nav>ul.main-menu>.logo{
+
+        }
+
+        .wrapper>header>nav>ul.main-menu>li{
+            background-color: aquamarine;
+        }
+
+        .wrapper>header>nav>ul.main-menu>li>a{}
+
+        .wrapper>header>nav>ul.main-menu>li>ul.sub-menu{
+            /* border: 1px solid; */
+            display: none;
+            position: absolute;
+        }
+        .wrapper>header>nav>ul.main-menu>li:hover ul.sub-menu{
+            display: block;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+        <header>
+            <div class="top-header"></div>
+            <nav>
+                <ul class="main-menu">
+                    <div class="logo"><a href="javascript:void(0)"><img
+                                src="https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F076%2F2023%2F08%2F16%2F2023081601001169500152491_20230816134704407.jpg&type=sc960_832"
+                                alt="HYUNDAI" width="70px" height="70px"></a></div>
+                    <li>
+                        <a href="javascript:void(0)">모델</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">구매 이벤트</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">서비스/멤버십</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">디지털/고객지원</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">브랜드</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Shop</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">내 차 추천받기</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">KR</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">EN</a></li>
+                            <li><a href="javascript:void(0)">CN</a></li>
+                            <li><a href="javascript:void(0)">월드와이드</a></li>
+                            <li><a href="javascript:void(0)">상용글로벌</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0)">로그인</a></li>
+
+                </ul>
+            </nav>
+        </header>
+
+        <!-- main -->
+        <main>
+            <section></section>
+            <section></section>
+            <section></section>
+            <section></section>
+            <section></section>
+            <section></section>
+            <section></section>
+            <section></section>
+        </main>
+
+        <!-- footer -->
+        <footer></footer>
+    </div>
+</body>
+
+</html>
