@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>현대자동차 | 전체 차량</title>
+  <style>
+    body { font-family: 'Noto Sans KR', sans-serif; margin:0; background:#f7f7f7;}
+    .container { max-width: 1300px; margin: 38px auto; padding: 38px 22px; background: #fff; border-radius: 18px; box-shadow:0 4px 32px rgba(0,0,0,0.05);}
+    .tabs { display:flex; gap:10px; margin-bottom: 36px; flex-wrap: wrap;}
+    .tab { padding:11px 32px; border-radius:22px; background:#eee; font-weight:600; cursor:pointer; transition:0.2s; font-size:1.05rem; border:none; outline:none;}
+    .tab.active { background: #002c5f; color:#fff; }
+    .list { display:grid; grid-template-columns: repeat(4, 1fr); gap: 34px;}
+    .car { background:#f5f7fa; border-radius:18px; box-shadow:0 1px 8px rgba(0,0,0,0.08); overflow:hidden; transition:box-shadow 0.2s; cursor:pointer; }
+    .car:hover { box-shadow:0 8px 22px rgba(0,44,95,0.15);}
+    .car-img { background: #fff; height: 180px; display: flex; align-items: center; justify-content: center;}
+    .car-img img { max-height: 140px; max-width: 96%; transition: transform 0.16s;}
+    .car:hover .car-img img { transform: scale(1.04);}
+    .car-info { padding: 18px 16px 15px 16px;}
+    .car-title { font-size: 1.13rem; font-weight: 700; color: #002c5f; margin-bottom: 8px;}
+    .car-price { font-size: 1.01rem; color: #333; margin-bottom: 3px;}
+    .car-cat { font-size: 0.97rem; color:#555; margin-bottom:4px; }
+    @media (max-width:1200px){.list{grid-template-columns:repeat(3,1fr);}}
+    @media (max-width:900px){.list{grid-template-columns:repeat(2,1fr);}}
+    @media (max-width:700px){.list{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+   <h1>조원들 페이지 병합하기위한 html파일</h1>
+
+    <div class="wrapper">
+        <header>
+            <div class="top-header"></div>
+            <nav></nav>
+        </header>
+        <main>
+            <section>Section만 넣습니다 - Header와 Footer는 담당하는 조에서 처리할예정</section>
+        </main>
+        <footer></footer>
+    </div>
+  
+    <div class="container">
+    <div class="tabs" id="categoryTabs"></div>
+    <div class="list" id="carList"></div>
+  </div>
+  <script>
+    // 실제 2025년 7월 기준 현대자동차 대표 차량 데이터 (카테고리별 대표 위주)
+    const carData = [
+      // 승용
+      {
+        name: '그랜저',
+        category: '승용',
+        price: '37,200,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/grandeur/23fcpe/23fcpe-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/grandeur/highlights'
+      },
+      {
+        name: '쏘나타 디 엣지',
+        category: '승용',
+        price: '27,940,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/sonata/24myrc/24myrc-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/sonata/highlights'
+      },
+      {
+        name: '아반떼',
+        category: '승용',
+        price: '21,790,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/avante/23rcpe/23rcpe-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/avante/highlights'
+      },
+      {
+        name: '아이오닉 6',
+        category: 'EV',
+        price: '54,500,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/ioniq6/23myrc/23myrc-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/ioniq6/highlights'
+      },
+      // SUV
+      {
+        name: '팰리세이드',
+        category: 'SUV',
+        price: '40,950,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/palisade/23myrc/23myrc-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/palisade/highlights'
+      },
+      {
+        name: '싼타페',
+        category: 'SUV',
+        price: '35,660,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/santafe/23myrc/23myrc-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/santafe/highlights'
+      },
+      {
+        name: '디 올 뉴 코나',
+        category: 'SUV',
+        price: '25,420,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/kona/23myrc/23myrc-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/kona/highlights'
+      },
+      {
+        name: '캐스퍼',
+        category: 'SUV',
+        price: '17,500,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/casper/21myrc/21myrc-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/casper/highlights'
+      },
+      // MPV
+      {
+        name: '스타리아',
+        category: 'MPV',
+        price: '31,950,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/staria/21myrc/21myrc-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/staria/highlights'
+      },
+      {
+        name: '스타리아 라운지',
+        category: 'MPV',
+        price: '38,030,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/staria_lounge/21myrc/21myrc-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/staria-lounge/highlights'
+      },
+      // N (고성능)
+      {
+        name: '아반떼 N',
+        category: 'N',
+        price: '33,920,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/avante-n/23myrc/23myrc-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/avante-n/highlights'
+      },
+      {
+        name: '코나 N',
+        category: 'N',
+        price: '35,430,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/kona-n/23myrc/23myrc-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/kona-n/highlights'
+      },
+      // EV
+      {
+        name: '아이오닉 5',
+        category: 'EV',
+        price: '53,800,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/ioniq5/23myrc/23myrc-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/ioniq5/highlights'
+      },
+      {
+        name: '코나 일렉트릭',
+        category: 'EV',
+        price: '46,860,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/konaev/22myrc/22myrc-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/kona-electric/highlights'
+      },
+      // HEV (하이브리드)
+      {
+        name: '쏘나타 HEV',
+        category: 'HEV',
+        price: '31,940,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/sonatahev/23myrc/23myrc-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/sonata-hybrid/highlights'
+      },
+      {
+        name: '그랜저 HEV',
+        category: 'HEV',
+        price: '43,100,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/grandeurhev/23fcpe/23fcpe-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/grandeur-hybrid/highlights'
+      },
+      {
+        name: '아반떼 HEV',
+        category: 'HEV',
+        price: '25,890,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/avantehev/23rcpe/23rcpe-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/avante-hybrid/highlights'
+      },
+      // FCEV (수소)
+      {
+        name: '넥쏘',
+        category: 'FCEV',
+        price: '68,250,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/nexo/23myrc/23myrc-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/nexo/highlights'
+      },
+      // 상용(트럭/버스 등, 일부만 대표로)
+      {
+        name: '포터2',
+        category: '상용',
+        price: '21,050,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/porter2/23myrc/23myrc-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/porter2/highlights'
+      },
+      {
+        name: '마이티',
+        category: '상용',
+        price: '38,320,000원~',
+        img: 'https://www.hyundai.com/contents/vehicle/mighty/21myrc/21myrc-rc-001.png',
+        link: 'https://www.hyundai.com/kr/ko/vehicles/mighty/highlights'
+      }
+    ];
+
+    // 카테고리 리스트 (실제 현대 공식 순서 기준)
+    const categories = [
+      "전체",
+      "승용",
+      "SUV",
+      "MPV",
+      "N",
+      "EV",
+      "HEV",
+      "FCEV",
+      "상용"
+    ];
+
+    // 탭 UI 출력
+    const categoryTabs = document.getElementById('categoryTabs');
+    let activeCategory = "전체";
+    function renderTabs() {
+      categoryTabs.innerHTML = '';
+      categories.forEach(cat => {
+        const tab = document.createElement('div');
+        tab.textContent = cat;
+        tab.className = 'tab' + (activeCategory===cat?' active':'');
+        tab.onclick = ()=>{ activeCategory=cat; renderList(); renderTabs(); }
+        categoryTabs.appendChild(tab);
+      });
+    }
+
+    // 차량 리스트 UI 출력
+    function renderList() {
+      const carList = document.getElementById('carList');
+      let list = carData;
+      if (activeCategory!=="전체") {
+        list = carData.filter(car=>car.category===activeCategory);
+      }
+      if(list.length===0){
+        carList.innerHTML = `<div style="grid-column:1/-1;padding:40px 0;text-align:center;color:#aaa;font-size:1.15rem;">해당 카테고리 차량이 없습니다.</div>`;
+        return;
+      }
+      carList.innerHTML = list.map(car=>`
+        <div class="car" onclick="window.open('${car.link}','_blank')">
+          <div class="car-img"><img src="${car.img}" alt="${car.name}" /></div>
+          <div class="car-info">
+            <div class="car-title">${car.name}</div>
+            <div class="car-price">${car.price}</div>
+            <div class="car-cat">${car.category}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // 초기 렌더링
+    renderTabs();
+    renderList();
+  </script>
+</body>
+</html>
