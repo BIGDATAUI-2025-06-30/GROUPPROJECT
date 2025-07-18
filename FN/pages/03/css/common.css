@@ -1,0 +1,11 @@
+*{box-sizing:border-box}
+
+a{text-decoration: none; color:black;}
+ul{list-style: none; margin:0; padding:0;}
+body{margin:0;}
+
+
+/* header */
+
+.wrapper>header{}
+.wrapper>header>nav{}
