@@ -9,55 +9,48 @@
 
 
 
-
-
     <style>
-        *{box-sizing: border-box;}
-        body{
-            background-color: rgb(248, 243, 235);
-        }
+        
 
-
-        h1{text-align: center;}
-        .wrapper{
-        }
-        
-        .wrapper>header{
+        .wrapper{}
+        .wrapper>main{}
+        .wrapper>main>.topmain{
             
         }
-        
-        .wrapper>header>.top-header{
-            
+        .wrapper>main>.topmain>.banner1{
+            width: auto;
+            height: 360px;
+            background-color: rgb(228, 220, 209);
+            margin-top: 80px;
+            display: flex;
+            justify-content: left;
+            align-items: start;
+            position: relative;
         }
-        
-        .wrapper>header>nav{
-            
+        .wrapper>main>.topmain>.banner1:nth-child(3){
         }
-        
-        .wrapper>main{
-            
+        .wrapper>main>.topmain>.banner1>a{
+            margin-top: 30px;
         }
-        
-        .wrapper>main>section{
+        .wrapper>main>.topmain>.banner1>p{
             
+            font-size: 0.8rem;
+            padding: 20px;
         }
-
-        .wrapper>main>section>.title{
+        .wrapper>main>.topmain>.banner1>.banner2{
+            display: grid;
             text-align: center;
-            font-size: 30px;
-
+            width: 70%;
+            height: 300px;
+            background-color: rgb(218, 214, 210);
+            position: absolute;
+            margin: 60px 15%;
         }
-
-        .wrapper>footer{
-
+        .wrapper>main>.topmain>.banner1>.banner2>.h1{
         }
-
-
-
-
-
-
-
+        .wrapper>main>.topmain>.banner1>.banner2>.b2text{
+        }
+        .wrapper>main>.topmain>.banner1>.banner2>.b2text>p{}
 
 
 
@@ -65,64 +58,55 @@
 
 
 
+
+
 </head>
 <body>
     
-    <h1>아무거나 만들기</h1>
+    <h1></h1>
 
     <div class="wrapper">
         <header>
             <div class="top-header"></div>
-            <nav>
-            </nav>
+            <nav></nav>
         </header>
         <main>
-            <section>
-                <div class="title">Paint Toys</div>
-                <div class="sodyd">A small playground of creative canvases <br/>
-                to bring out your creative side with a <br/>
-                few beautiful limitations inspired by the <br/>
-                art world!</div>
-            </section>
-            <section>
-                <div class="container">
-                    <div class="maincard1">
-                        <div class="cardimg"></div>
-                        <div class="cardsodyd">
-                            <h3>카드 제목</h3>
-                            <p>카드 내용</p>
+            <section class="topmain">
+                <div class="banner1">
+                    <a href="#">홈</a>
+                    <p>></p>
+                    <p>서비스/멤버십</p>
+                    <p>></p>
+                    <p>블루멤버스</p>
+                    <p>></p>
+                    <p>블루멤버스 소개</p>
+                    <div class="banner2">
+                        <h1>블루멤버스 소개</h1>
+                        <div class="b2text">
+                            <p>현대자동차 오너를 위한 블루멤버스의 이야기와 역사를 한눈에 알아보시기 바랍니다.</p>
                         </div>
-                    <div class="maincard2">
-                        <div class="cardimg"></div>
-                        <div class="cardsodyd">
-                            <h3>카드 제목</h3>
-                            <p>카드 내용</p>
-                        </div>
-                    <div class="maincard3">
-                        <div class="cardimg"></div>
-                        <div class="cardsodyd">
-                            <h3>카드 제목</h3>
-                            <p>카드 내용</p>
-                        </div>
-                    <div class="maincard4">
-                        <div class="cardimg"></div>
-                        <div class="cardsodyd">
-                            <h3>카드 제목</h3>
-                            <p>카드 내용</p>
-                        </div>
+                    </div>
                 </div>
             </section>
+            <section class="topmain">
+                <div class="btn">
+                    <button>블루멤버스 story</button>
+                    <button>블루멤버스 history</button>
+                    <div class="내용">
+                        <div class="블루멤버스Story">블루멤버스 Story</div>
+                        <div class="스토리내용">블루멤버스는 2007년부터 시작된 현대자동차 오너를 위한 고객 서비스 입니다.<br/>고객님들의 보다 즐겁고 안전한 자동차 생활을 위해 항상 노력하겠습니다.</div>
+                        <div class="media-img"></div>
+                        <div class="스토리내용2">블루멤버스 로고는 현대자동차를 드라이빙하는 고객을 상징화하여<br/>고객의 즐거운 자동차 생활을 유지하고 업그레이드 해주는 현대자동차의 서비스 마인드를 상징합니다.</div>
+                    </div>
+                </div>
+                -
+
+
+            </section>
         </main>
-        <footer>
-            <div class="footertitle">
-                <div class="foottitle">Paint and have Fun!</div>
-            </div>
-            <div class="footerbar">
-                <div class="bar">toms.toys</div>
-                <div class="bar">privacy</div>
-                <div class="bar">terms</div>
-            </div>
-        </footer>
+
+        
+        <footer></footer>
     </div>
 </body>
 </html>
