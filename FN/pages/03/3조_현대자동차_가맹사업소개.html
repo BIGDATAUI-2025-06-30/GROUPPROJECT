@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        a{text-decoration: none;}
+        body {margin: 0;width: auto;}
+
+        .wrapper {
+            background-color: rgb(255, 255, 255);
+            width: 1920px;
+            height: 3568.66px;
+            margin: auto;
+        }
+        header{}
+
+        .top-area {
+            /* background-color: blue; */
+            width: 1920px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid;
+            opacity: 0.5;
+        }
+        .top-area>div {
+            font-size: 50px;
+            color: white;
+        }
+
+        .title_area {
+            width: 1920px;
+            height: 320px;
+        }
+
+        .title_area>.title_top {
+            background-color: rgb(228, 220, 209);
+            width: 1920px;
+            height: 90px;
+        }
+
+        .title_top_center {
+            background-color: rgb(228, 220, 209);
+            width: 1120px;
+            height: 90px;
+            margin: 0 auto;
+            color: black;
+            font-size: 14px;
+            display: flex;
+            justify-content: start;
+            gap: 10px;
+
+        }
+
+        .title_top_center>a {
+            align-content: center;
+            color: black;
+            font-size: 14px;
+        }
+
+        .title_top_center>span {
+            align-content: center;
+            color: black;
+            font-size: 14px;
+        }
+
+        .title_area>.title_bottom {
+            background-color: rgb(228, 220, 209);
+            width: 1920px;
+            height: 270px;
+        }
+
+        .title_bottom_center {
+            background-color: rgb(241, 237, 232);
+            width: 1777px;
+            height: 270px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .title_bottom_center>h1 {
+            margin-top: 60px;
+            font-size: 56px;
+        }
+
+        .title_bottom_center>p {
+            font-size: 16px;
+        }
+
+        .content_title {
+            display: flex;
+            height: 400px;
+            width: 1920px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .content_title>.C_title {
+            display: flex;
+            width: 1280px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .content_title>.C_title>.C_top {
+            width: 1280px;
+            height: 160px;
+        }
+
+        .content_title>.C_title>.C_top>h2 {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 42px;
+        }
+
+        .content_title>.C_title>.C_mid {
+            width: 1280px;
+            height: 140px;
+        }
+
+        .content_title>.C_title>.C_mid>.C_img {
+            width: 430px;
+            height: 140px;
+            background-image: url(https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/service-network/service-network-information/logo-bluehands-pc.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: auto;
+        }
+
+        .content_title>.C_title>.C_bottom {
+            width: 1280px;
+            height: 100px;
+        }
+
+        .content_title>.C_title>.C_bottom>h2 {
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .content_p {
+            width: 1920px;
+            height: 246px;
+        }
+        
+        .content_p>p {
+            width: 860px;
+            font-size: 15px;
+            height: 246px;
+            margin: auto;
+            text-align: center;
+            white-space: pre;
+            padding-top: 20px;
+            line-height: 29px;
+            color: rgb(110, 110, 110);
+        }
+
+        .content_download {
+            background-color: rgb(255, 255, 255);
+            width: 1920px;
+            height: 80px;
+        }
+        .content_download>div {
+            display: flex;
+            width: 1280px;
+            height: 80px;
+            margin: auto;
+        }
+        .content_download>div>a {
+            background-color: rgb(0,44,95);
+            width: 160px;
+            height: 40px;
+            margin: auto;
+            font-size: 13;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            
+        }
+
+        .content_CardTitle {
+            width: 1920px;
+            height: 120px;
+        }
+        .content_CardTitle>div {
+            width: 1280px;
+            
+            margin: 0 auto;
+            display: flex;
+            padding-top: 70px;
+            padding-left: 70px;
+            position: relative;
+        }
+        .content_CardTitle>div>span {
+            display: block;
+            height: 14px;
+            margin-left: 10px;
+            color: rgb(43,43,43);
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        .content_Card_Top {
+            width: 1920px;
+            height: 480px;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 80px;
+        }
+        .content_Card_Top>div {
+            background-image: url(https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/bluehands/bluehands-franchise-business-pc-04.jpg);
+            background-size: cover;
+            width: 1120px;
+            height: 400px;
+        }
+        .content_Card_Bottom {
+            width: 1920px;
+            height: 827px;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 80px;
+        }
+        .content_Card_Bottom>div {
+            background-image: url(https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/bluehands/bluehands-franchise-business-pc-04-02.jpg);
+            background-size: cover;
+            width: 1120px;
+            height: 747px;
+        }
+
+        .content_prevnext{
+            background-color: rgb(228,220,211);
+            width: 1920px;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content_prevnext>.nextbar{
+            width: 1120px;
+            height: 160px;
+            padding: 64px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .content_prevnext>.nextbar>a{
+            display: flex;
+            font-size: 29px;
+            font-weight: bold;
+            line-height: 1;
+            gap: 10px;
+            align-items: center;
+            color: black;
+        }
+        .content_prevnext>.nextbar>a>span{
+            font-size: 18px;
+            font-weight: bold;
+            
+        }
+        .content_prevnext>.nextbar>a:nth-child(1){
+            width: 288px;
+            height: 31px;
+            padding-right: 5px;
+            
+        }
+        .content_prevnext>.nextbar>a:nth-child(2){
+            text-align: end;
+            width: 237px;
+            height: 31px;
+        }
+
+        .content_whitebar {
+            background-color: white;
+            width: 1920px;
+            height: 120px;
+        }
+
+        /* .footer {
+            background-color: rgb(199, 113, 33);
+            width: 1920px;
+            height: 158.28px;
+        } */
+
+        .footer_area {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid;
+            width: 1920px;
+            height: 700px;
+        }
+    </style>
+</head>
+
+<body >
+    <div class="wrapper">
+
+        <header class="top-area">
+            <div>헤더영역</div>
+        </header>
+
+        <main>
+            <div class="title_area">
+                <div class="title_top">
+                    <div class="title_top_center">
+                        <a href="">홈</a>
+                        <span>></span>
+                        <span>서비스/멤버십</span>
+                        <span>></span>
+                        <span>블루핸즈 가맹사업</span>
+                        <span>></span>
+                        <span style="font-weight: bold;">가맹사업 소개</span>
+                    </div>
+                </div>
+                <div class="title_bottom">
+                    <div class="title_bottom_center">
+                        <h1>블루핸즈 가맹사업 소개</h1>
+                        <p>블루핸즈 가맹사업을 소개합니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content_title">
+                <div class="C_title">
+                    <div class="C_top">
+                        <h2>고객 곁에는 항상 현대자동차 블루핸즈</h2>
+                    </div>
+                    <div class="C_mid">
+                        <div class="C_img"></div>
+                    </div>
+                    <div class="C_bottom">
+                        <h2>『고객감동』의 목적지까지, 현대자동차와 동행하시겠습니까?</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="content_p">
+                <p>블루핸즈는 현대자동차의 공식 서비스 협력사로서 보증수리를 위탁받아 보증기간 내 발생하는 정비를 수행하는 역할을 하고 있습니다.
+                    사업장을 찾아온 고객에게 당사가 제시한 적절한 서비스품질 기준을 준수하여 서비스를 제공해야하는 의무가 있습니다.
+
+                    당사는 2007년 가맹사업 창립 이래 전국 1200여개의 블루핸즈에서 ‘고객 최우선’의 가치를 실현하고 있습니다.
+                    현대자동차는 블루핸즈의 동반성장을 위해 최선을 다하며, 성공적인 가맹사업을 위해 가맹점주님과 함께 노력할 것입니다.
+
+                    ※ 저희 현대자동차와의 동행을 원하시는 가맹희망자께서는 아래의 정보공개서를 확인해보세요.</p>
+            </div>
+            <div class="content_download">
+                <div>
+                    <a href="">정보공개서 다운로드</a>
+                </div>
+            </div>
+            <div class="content_CardTitle">
+                <div>
+                    <span>블루핸즈 가맹 유형</span>
+                </div>
+            </div>
+            <div class="content_Card_Top">
+                <div>
+                </div>
+            </div>
+            <div class="content_Card_Bottom">
+                <div>
+                </div>
+            </div>
+            <div class="content_prevnext">
+                <div class="nextbar">
+                    <a href="javascript:void(0)"><span>≪</span>서비스 네트워크 찾기</a>
+                    <a href="javascript:void(0)">가맹점 개설 안내<span>≫</span></a>
+                </div>
+            </div>
+            <div class="content_whitebar"></div>
+        </main>
+
+        <footer class="footer_area">
+            <div></div>
+        </footer>
+
+    </div>
+</body>
+
+</html>
