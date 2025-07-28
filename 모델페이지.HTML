@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>현대자동차 | 전체 차량</title>
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      margin: 0;
+      background: #f7f7f7;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 38px auto;
+      padding: 38px 22px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 32px rgba(0, 0, 0, 0.05);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 11px 32px;
+      border-radius: 22px;
+      background: #eee;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 1.05rem;
+      border: none;
+      outline: none;
+    }
+
+    .tab.active {
+      background: #002c5f;
+      color: #fff;
+    }
+
+    .list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 34px;
+    }
+
+    .car {
+      background: #f5f7fa;
+      border-radius: 18px;
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+      cursor: pointer;
+    }
+
+    .car:hover {
+      box-shadow: 0 8px 22px rgba(0, 44, 95, 0.15);
+    }
+
+    .car-img {
+      background: #fff;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .car-img img {
+      max-height: 140px;
+      max-width: 96%;
+      transition: transform 0.16s;
+    }
+
+    .car:hover .car-img img {
+      transform: scale(1.04);
+    }
+
+    .car-info {
+      padding: 18px 16px 15px 16px;
+    }
+
+    .car-title {
+      font-size: 1.13rem;
+      font-weight: 700;
+      color: #002c5f;
+      margin-bottom: 8px;
+    }
+
+    .car-price {
+      font-size: 1.01rem;
+      color: #333;
+      margin-bottom: 3px;
+    }
+
+    .car-cat {
+      font-size: 0.97rem;
+      color: #555;
+      margin-bottom: 4px;
+    }
+
+    @media (max-width:1200px) {
+      .list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width:900px) {
+      .list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width:700px) {
+      .list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="tabs" id="categoryTabs"></div>
+    <div id="carList"></div>
+  </div>
+ <script>
+  const carData = [
+    {
+      name: 'Bentayga',
+      category: '벤추리',
+      price: '400,000,000원~',
+      img: './car picture/bentayga.png',
+      link: 'https://bentleyseoul.co.kr/models/bentayga/',
+    },
+    {
+      name: 'New Continental GT Convertible',
+      category: '벤추리',
+      price: '500,000,000원~',
+      img: './car picture/New Continental GT Convertible.png',
+      link: 'https://bentleyseoul.co.kr/models/new-continental-gt-convertible/'
+    },
+    {
+      name: 'New Continental GT',
+      category: '벤추리',
+      price: '1000,000,000원~',
+      img: './car picture/New Continental GT.png',
+      link: 'https://bentleyseoul.co.kr/models/new-continental-gt/'
+    },
+    {
+      name: 'New Flying Spur',
+      category: '벤추리',
+      price: '400,950,000원~',
+      img: './car picture/New Flying Spur.png',
+      link: 'https://bentleyseoul.co.kr/models/new-flying-spur/'
+    },
+    {
+      name: '아이오닉 6',
+      category: '승용',
+      price: '540,500,000원~',
+      img: './car picture/ioniq6.avif',
+      link: 'https://www.hyundai.com/kr/ko/vehicles/ioniq6/highlights'
+    },
+    {
+      name: 'nexo-25',
+      category: 'SUV',
+      price: '110,500,000원~',
+      img: './car picture/nexo-25.avif',
+      link: 'https://www.hyundai.com/kr/ko/vehicles/nexo-25/highlights'
+    },
+  ];
+
+  const categories = ["전체", "승용", "벤추리", "SUV"];
+  const categoryTabs = document.getElementById('categoryTabs');
+  let activeCategory = "전체";
+
+  // 탭 UI 출력
+  function renderTabs() {
+    categoryTabs.innerHTML = '';
+    categories.forEach(cat => {
+      const tab = document.createElement('div');
+      tab.textContent = cat;
+      tab.className = 'tab' + (activeCategory === cat ? ' active' : '');
+      tab.onclick = () => {
+        activeCategory = cat;
+        renderList();
+        renderTabs();
+      }
+      categoryTabs.appendChild(tab);
+    });
+  }
+
+  // 차량 리스트 UI 출력
+  function renderList() {
+  const carList = document.getElementById('carList');
+  carList.innerHTML = '';
+
+  if (activeCategory === "전체") {
+    // 전체 → 카테고리별로 보여줌
+    categories.filter(c => c !== "전체").forEach(cat => {
+      const list = carData.filter(car => car.category === cat);
+
+      if (list.length > 0) {
+        // 카테고리 제목
+        const title = document.createElement('h2');
+        title.textContent = `${cat} (${list.length})`;
+        title.style.cssText = `
+          margin: 30px 0 15px;
+          font-size: 1.3rem;
+          font-weight: 700;
+          color: #002c5f;
+          border-bottom: 1px solid #ddd;
+          padding-bottom: 6px;
+        `;
+        carList.appendChild(title);
+
+        // 리스트 (카드 유지)
+        const grid = document.createElement('div');
+        grid.className = 'list';
+        grid.innerHTML = list.map(car => `
+          <div class="car" onclick="window.open('${car.link}','_blank')">
+            <div class="car-img"><img src="${car.img}" alt="${car.name}" /></div>
+            <div class="car-info">
+              <div class="car-title">${car.name}</div>
+              <div class="car-price">${car.price}</div>
+              <div class="car-cat">${car.category}</div>
+            </div>
+          </div>
+        `).join('');
+        carList.appendChild(grid);
+      }
+    });
+  } else {
+    // 특정 카테고리만 출력
+    const list = carData.filter(car => car.category === activeCategory);
+
+    if (list.length === 0) {
+      carList.innerHTML = `<div style="padding:40px 0;text-align:center;color:#aaa;font-size:1.15rem;">
+        해당 카테고리 차량이 없습니다.
+      </div>`;
+      return;
+    }
+
+    const grid = document.createElement('div');
+    grid.className = 'list';
+    grid.innerHTML = list.map(car => `
+      <div class="car" onclick="window.open('${car.link}','_blank')">
+        <div class="car-img"><img src="${car.img}" alt="${car.name}" /></div>
+        <div class="car-info">
+          <div class="car-title">${car.name}</div>
+          <div class="car-price">${car.price}</div>
+          <div class="car-cat">${car.category}</div>
+        </div>
+      </div>
+    `).join('');
+    carList.appendChild(grid);
+  }
+}
+
+  // 초기 렌더링
+  renderTabs();
+  renderList();
+</script>
+
+</body>
+
+</html>
