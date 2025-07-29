@@ -1,0 +1,45 @@
+.bottom-bottom {
+    background-color: white;
+    width: 1200px;
+    height: 170px;
+    margin: 0 auto;
+    border-left: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+    display: flex;
+    justify-content: space-around; /* 더 넓게 분포 */
+    padding: 20px 40px; /* 안쪽 여백 추가 */
+    box-sizing: border-box;
+}
+
+.bottom-box-left,
+.bottom-box-middle,
+.bottom-box-right {
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-box-left > span,
+.bottom-box-middle > span,
+.bottom-box-right > span {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #002f6c; /* 예시: 딥 블루톤 */
+}
+
+.a-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px; /* 간격 조정 */
+}
+
+.a-wrapper > a {
+    font-size: 14px;
+    color: #333;
+    width: fit-content;
+    height: 24px;
+    line-height: 24px;
+    text-decoration: none;
+}
