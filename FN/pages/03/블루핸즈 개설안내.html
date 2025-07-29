@@ -87,7 +87,7 @@
             font-size: 56px;
             padding-bottom: 18px;
             font-family: 'HeadMedium';
-        margin: 0.67em 0;
+            margin: 0.67em 0;
         }
 
         .Top-Warpper>header>p {
@@ -98,43 +98,57 @@
 
         }
 
-        
+
         .tab-menu {
             height: 60px;
+            /* width: 100%; */
             width: 100%;
-            max-width: 1920px;
             border: 1px solid;
             display: flex;
             background-color: #444444;
-           
+
+
         }
 
         .tab-menu>a {
+text-decoration: none;
             display: inline-flex;
             height: 100%;
             width: 100%;
             padding: 0 15px;
             font-family: 'TextMedium';
             font-size: 15px;
-            /* line-height: 22px; */
+            line-height: 60px;
             color: #fff;
             cursor: pointer;
             text-align: center;
             justify-content: center;
 
 
+        }
+
+
+        .tab-menu>a>span:first-child {
+            padding-left: 0;
+        }
+
+        .tab-menu>a>span:not(:first-child)::before {
+            content: '\003e';
+            /* '>' 문자 */
+            position: absolute;
+            left: 0;
+            color: #777;
 
         }
 
-        .tab-menu>a>span {
-            display: inline-block;
 
 
 
 
 
 
-        }
+
+
 
         /* .tab-menu .active {
             display: inline-block;
@@ -142,7 +156,8 @@
         } */
 
         main {
-            max-width: 1000px;
+
+            max-width: 1120px;
             margin: 60px auto;
             padding: 0 20px;
         }
@@ -154,9 +169,11 @@
         }
 
         .steps-container {
-            background: #f7f7f7;
-            padding: 30px;
-            border-radius: 8px;
+            height: 439px;
+            width: 100%;
+            background: #F8F5F4;
+            padding: 37px 0 0;
+
         }
 
         .icons {
@@ -172,27 +189,112 @@
         }
 
         .icons div img {
-            height: 40px;
+            height: 63px;
+            width: 63px;
             margin-bottom: 10px;
+
         }
 
         .icons div p {
-            font-size: 14px;
+            font-size: 16px;
+        }
+
+        .icons-sub {
+            height: 286px;
+            padding: 73px 0 40px;
+            border-top: 1px solid #e5e5e5;
+
+
         }
 
         .explanation {
+            height: 60px;
             text-align: center;
             font-size: 14px;
-            margin-bottom: 30px;
+            /* margin-bottom: 30px; */
             color: #222;
         }
 
         .steps-bottom {
             display: flex;
-            justify-content: space-around;
-            font-size: 14px;
+            height: 32px;
+
+            line-height: 32px;
+            font-size: 18px;
             font-weight: bold;
             color: #0078d4;
+        }
+
+        .steps-bottom>div>li {
+            display: flex;
+            font-size: 18px;
+        }
+
+        .steps-bottom>div>li .num {
+            border: 1px solid;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            margin-right: 11px;
+            border-radius: 50%;
+            background-color: #007fa8;
+            color: #fff;
+            text-align: center;
+        }
+
+        .steps-bottom>div>li::before {
+            display: block;
+            content: "";
+            width: 60px;
+            height: 1px;
+            margin: 15px 20px 0;
+            background: #ccc;
+        }
+
+        .steps-bottom div .txt {
+            color: black;
+        }
+
+        .arrow-container-wrapper {
+         
+            display: flex;
+            justify-content: center;
+        }
+
+        .arrow-container-wrapper .arrow-container {
+            height: 69px;
+            width: 100%;
+            /* max-width: 1120px; */
+            margin: 0 auto;
+            background-color: #e4dcd3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 70px;
+            margin-bottom: 70px;
+            overflow: hidden;
+            color: #000;
+            font-size: 30px;
+            padding: 64px 0;
+
+        }
+
+        .arrow-text {
+            font-size: 20px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .arrow-text.left::before {
+            content: "〈";
+            /* 왼쪽 화살표 */
+            margin-right: 10px;
+        }
+
+        .arrow-text.right::after {
+            content: "〉";
+            /* 오른쪽 화살표 */
+            margin-left: 10px;
         }
     </style>
 </head>
@@ -221,41 +323,111 @@
 
 
     </div>
-
-    <main>
+    <!-- <div>
         <h2>개설 절차</h2>
+        </div> -->
+    <main>
+        <div>
+            <h2>개설 절차</h2>
+        </div>
         <div class="steps-container">
             <div class="icons">
                 <div>
-                    <img src="https://img.icons8.com/ios/50/clipboard.png" alt="">
+                    <img src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/bluehands/icon-bluehands-openingprocess-04-off-pc.png"
+                        alt="">
                     <p>블루핸즈 공모</p>
                 </div>
                 <div>
-                    <img src="https://img.icons8.com/ios/50/document.png" alt="">
+                    <img src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/bluehands/icon-bluehands-openingprocess-02-off-pc.png"
+                        alt="">
                     <p>내인가</p>
                 </div>
                 <div>
-                    <img src="https://img.icons8.com/ios/50/stack-of-paper.png" alt="">
+                    <img src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/bluehands/icon-bluehands-openingprocess-03-off-pc.png"
+                        alt="">
                     <p>본인가</p>
                 </div>
                 <div>
-                    <img src="https://img.icons8.com/ios/50/agreement.png" alt="">
+                    <img src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/bluehands/icon-bluehands-openingprocess-04-off-pc.png"
+                        alt="">
                     <p>가망계약 체결</p>
                 </div>
             </div>
+            <div class="icons-sub">
+                <div class="explanation">
+                    블루핸즈 가맹점은 공모를 통해 모집합니다.<br>
+                    서류 심사 및 면접을 거쳐 선정된 가망희망자에게는 후속 절차를 안내합니다.
+                </div>
 
-            <div class="explanation">
-                블루핸즈 가맹점은 공모를 통해 모집합니다.<br>
-                서류 심사 및 면접을 거쳐 선정된 가망희망자에게는 후속 절차를 안내합니다.
-            </div>
+                <div class="steps-botton ">
+                    <!-- <ul>
+                        <li>
+                            <span class="num">1</span>
+                            <span class="txt">블루핸즈 공모</span>
+                        </li>
+                        <li class="step02">
+                            <span class="num">2</span>
+                            <span class="txt">신청서 접수</span>
+                        </li>
+                        <li class="step03">
+                            <span class="num">3</span>
+                            <span class="txt">서류 심사 및 면접</span>
+                        </li>
+                        <li class="step04">
+                            <span class="num">4</span>
+                            <span class="txt">후수역무 안내</span>
+                        </li>
+                        
+                    </ul>
+                </div> -->
+                    <div class="steps-bottom">
+                        <div>
+                            <li>
+                                <span class="num">1</span>
+                                <span class="txt">블루핸즈 공모</span>
+                            </li>
+                        </div>
 
-            <div class="steps-bottom">
-                <div>1 블루햄즈 공모</div>
-                <div>2 신청서 접수</div>
-                <div>3 서류 심사 및 면접</div>
-                <div>4 후수역무 안내</div>
+                        <div>
+                            <li class="step02">
+
+                                <span class="num">2</span>
+                                <span class="txt">신청서 접수</span>
+                            </li>
+                        </div>
+
+
+                        <div>
+                            <li class="step03">
+
+                                <span class="num">3</span>
+                                <span class="txt">서류 심사 및 면접</span>
+                            </li>
+                        </div>
+
+                        <div>
+                            <li class="step04">
+
+                                <span class="num">4</span>
+                                <span class="txt">후수역무 안내</span>
+                            </li>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
             </div>
-        </div>
+            <div class="arrow-container-wrapper">
+                <div class="arrow-container">
+                    <div class="arrow-text left">가맹사업 소개</div>
+                    <div class="arrow-text right">가맹점 모집</div>
+                </div>
+            </div>
     </main>
 </body>
 
