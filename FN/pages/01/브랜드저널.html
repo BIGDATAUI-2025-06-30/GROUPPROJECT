@@ -6,26 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Hyundai 브랜드 저널 </title>
     <style>
+        .bg-img {
+            position: relative;
+        }
+
+        .addr {
+
+            position: absolute;
+            left: 28vw;
+            top: 2.5vw;
+            z-index: 1;
+            font-size: 13px;
+            font-weight: 500;
+
+        }
+
         .spread-img {
             position: relative;
-            background-image: url('https://www.hyundai.com/content/dam/hyundai/kr/ko/images/brand/brandstory/campaigns/campaigns-campaigns-keyvisual-w.jpg');
+            display: flex;
+            background-image: url('https://media.istockphoto.com/id/1409340439/ko/%EC%82%AC%EC%A7%84/%ED%95%98%EC%96%80-%EC%9E%AC%ED%99%9C%EC%9A%A9-%EC%A2%85%EC%9D%B4-%EC%A7%88%EA%B0%90.jpg?s=612x612&w=0&k=20&c=5VX2q7K29S4beWfnDtBMBTEFu1jm6GqJ42Lh6AiE6uY=');
             background-size: cover;
             background-position: center;
-            height: 500px;
+            height: 600px;
 
+        }
+
+        .spread-img>img {
+            display: block;
+            width: 1700px;
+            height: 500px;
+            margin: 100px auto;
         }
 
         h1 {
             position: absolute;
-            font-size: 50px;
-            left: 100px;
+            font-size: 2vw;
+            left: 28vw;
             top: 150px;
         }
 
         h3 {
             position: absolute;
-            left: 100px;
+            left: 28vw;
             top: 280px;
+            font-size: 0.8vw;
+            font-weight: 400;
         }
 
         .mid {
@@ -81,7 +106,7 @@
             margin: 0;
             font-size: 12px;
             color: #555;
-            line-height: 20px;
+            line-height: 25px;
         }
     </style>
 </head>
@@ -91,8 +116,15 @@
     </header>
 
     <main>
+        <section class="bg-img">
+
+        </section>
+        <span class="addr"> 홈 &nbsp &nbsp> &nbsp &nbsp브랜드 &nbsp &nbsp> &nbsp &nbsp브랜드스토리 &nbsp &nbsp> &nbsp &nbsp 브랜드 저널
+            - 라이프스타일</span>
 
         <section class="spread-img">
+            <img src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/brand/brandstory/campaigns/campaigns-campaigns-keyvisual-w.jpg"
+                alt="">
             <div></div>
             <h1>브랜드 저널</h1>
             <h3>개인의 이동 수단에서 지속 가능한 미래로의 연결을 추구해온 현대자동차의 브랜드 캠페인을 소개합니다.</h3>
@@ -489,8 +521,8 @@
                     <p class="subtext">SOLATI Moving Studio: <br>현대자동차와 SM 엔터테인먼트 협업의 첫 번째 시작</p>
                 </div>
             </div>
-            
-        
+
+
 
 
 
@@ -499,28 +531,11 @@
     </main>
 
     <footer>
-        <button onclick="scrollToTop()" id="topBtn" title="맨 위로">↑</button>
 
     </footer>
 
 
 </body>
-<script>
-    window.onscroll = function () {
-        const btn = document.getElementById("topBtn");
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            // console.log(btn);
-            btn.style.display = "block";
-        } else {
-            btn.style.display = "none";
-        }
-    };
 
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    }</script>
 
 </html>
