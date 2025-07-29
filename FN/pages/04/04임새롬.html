@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing:border-box;}
+        body{margin:0;padding:0;}
+        .layoutCenter{
+            width:1120px;
+            margin:0 auto;
+        }
+
+        .wrapper>main>.pointHeader{ 
+            background-color:#E4DCD1;
+            
+        }
+        .wrapper>main>.pointHeader>.point-nav{
+            width:1120px;
+            height:90px;
+            margin:0 auto;
+            /* border:1px solid; */
+            line-height:80px;
+            font-size:13px;
+            
+        }
+        .wrapper>main>.pointHeader>.point-nav>span{
+            height:20px;
+            padding-left:27px;
+        }
+        /* title area 안에 h1, p태그 고정시켜놓기 */
+        .wrapper>main>.pointHeader>.title-area{
+            width:1920px;
+            height:270px;
+            background-color:#F1EDE8;
+            text-align:center;
+            padding:2% 5%;
+        }
+        .wrapper>main>.pointHeader>.title-area h1{
+            width:100%;
+            height:74px;
+            font-size:56px;
+            padding-bottom:20px;
+            margin:40px 0;
+            
+        }
+        .wrapper>main>.pointHeader>.title-area p{
+            height:28px;
+        }
+
+        .wrapper>main>.pointDef>.pointDef-title{
+            height:241px;
+            text-align:center;
+            /* border:1px solid; */
+        }
+        .wrapper>main>.pointDef>.pointDef-title>h2{
+            width:100%;
+            height:44px;
+            font-size:44px;
+            padding-bottom:20px;
+            margin:80px 0 20px 0;
+        }
+        .wrapper>main>.pointDef>.pointDef-title>p{
+            margin:20px 0 0 0;
+            height:57px;
+            line-height:50px;
+        }
+        .wrapper>main>.pointDef>.pointDef-boxes{
+            border:1px solid;
+            padding:0;
+            display:grid;
+            grid-template-columns:repeat(2, 550px);
+            grid-template-rows:repeat(2, 295px);
+            row-gap:25px;
+            column-gap:20px;
+            
+            /* align-items:center; */
+            /* justify-content:center; */
+        }
+
+        .wrapper>main>.pointDef>.pointDef-boxes>.box-container{
+            width:545px;
+            height:285px;
+            background-color:#F1EDE8;
+            display:grid;
+            grid-template-columns:300px 200px;
+            gap:20px;
+            border:1px solid;
+        }
+        .wrapper>main>.pointDef>.pointDef-boxes>.box-container>.box{
+            width:330px;
+            margin:15px 15px;
+            /* padding:; */
+            display:flex;
+            flex-direction:column;
+            
+        }
+        .wrapper>main>.pointDef>.pointDef-boxes>.box-container>img{
+            width:193px;
+            height:285px;
+            
+        }
+        .wrapper>main>.pointDef>.pointDef-boxes>.box-container>.box>.box-title{
+            font-size:20px;
+            line-height:1.6;
+            
+        }
+        .wrapper>main>.pointDef>.pointDef-boxes>.box-container>.box>.box-title:nth-child(1){
+            margin:20px 0 0 0;
+        }
+        .wrapper>main>.pointDef>.pointDef-boxes>.box-container>.box>.box-title:nth-child(2){
+            margin-bottom:10px;
+        }
+        .wrapper>main>.pointDef>.pointDef-boxes>.box-container>.box>span{
+            font-size:16px;
+            margin:2px 0;
+        }
+
+    </style>
+        
+</head>
+<body>
+    <div class="wrapper">
+        <header></header>
+        <main class="pointContainer">
+            <section class="pointHeader">
+                <div class="point-nav layoutCenter">
+                    <a>홈</a>
+                    <span> > 서비스/멤버십</span>
+                    <span> > 블루멤버스</span>
+                    <span> > 블루멤버스 포인트</span>
+                </div>
+                <div class="title-area layoutCenter">
+                    <div class="">
+                        <h1>포인트 안내</h1>
+                        <p>블루멤버스 포인트를 활용하는 방법을 지금 확인해 보시기 바랍니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pointDef layoutCenter">
+                <div class="pointDef-title">
+                    <h2>블루멤버스 포인트란?</h2>
+                    <p>블루멤버스 포인트는 현대자동차 구매고객을 대상으로 가맹점에서 물품 구매 또는 서비스 이용시 블루멤버스 카드 또는 블루멤버스 제휴카드를 통해 포인트를 적립하고 사용할 수 있는 서비스입니다.</p>
+                </div>
+                <div class="pointDef-boxes">
+                    <div class="box-container">
+                        <div class="box">
+                            <span class="box-title">차종과 구매횟수에 따라</span>
+                            <span class="box-title">블루멤버스 포인트 적립받고!</span>
+                            <span>구매횟수에 따라 높아지는 포인트 적립!</span>
+                            <span>렌트/리스를 이용해도 포인트 적립!</span>
+                            <span>현대자동차를 소유 또는 이용하는 모든</span>
+                            <span>블루멤버스 고객은 포인트 혜택을 누릴 수 있습니다.</span>
+                        </div>
+                        <img src="C:\Users\Administrator\Downloads\PJ\FN\image\4조_이미지1.png" alt="박스이미지1">
+                    </div>
+                     <div class="box-container">
+                        <div class="box">
+                            <span class="box-title">블루멤버스 포인트로 차량 유지 비용 절감하고!</span>
+                            <span>차량 운행을 위해 매월 발생하는 주유비용도!</span>
+                            <span>안전한 차량운행을 위한 엔진오일 교환과 차량점검도!</span>
+                            <span>블루멤버스 포인트로 할인 받고 차량 유지비용을</span>
+                            <span>절감할 수 있습니다.</span>
+                        </div>
+                        <img src="C:\Users\Administrator\Downloads\PJ\FN\image\4조_이미지2.png" alt="박스이미지2">
+                    </div>
+                     <div class="box-container">
+                        <div class="box">
+                            <span class="box-title">블루멤버스 포인트로 다양한</span>
+                            <span class="box-title">일상 제휴처에서 즐거움을 누리고!</span>
+                            <span>지친 일상에서 벗어나 즐거움을 누리고 싶을 때,</span>
+                            <span>가족들과 함께 행복한 하루를 보내고 싶을 때</span>
+                            <span>언제라도 블루멤버스 생활 제휴처와 함께라면</span>
+                            <span>포인트로 즐거움을 누릴 수 있습니다.</span>
+                        </div>
+                        <img src="C:\Users\Administrator\Downloads\PJ\FN\image\4조_이미지3.png" alt="박스이미지3">
+                    </div>
+                     <div class="box-container">
+                        <div class="box">
+                            <span class="box-title">자동차 재구매를 생각할 때도</span>
+                            <span class="box-title">블루멤버스 포인트가 힘이 되고!</span>
+                            <span>중고차를 매도할 때도 포인트를 적립받고.</span>
+                            <span>신차를 구매할 때 최대 400만 포인트까지 할인받기!</span>
+                            <span>그리고 구매회차에 따라 다시 적립되는</span>
+                            <span>더 높아진 블루멤버스 포인트!</span>
+                        </div>
+                        <img src="C:\Users\Administrator\Downloads\PJ\FN\image\4조_이미지4.png" alt="박스이미지4">
+                    </div>
+                </div>
+            </section>
+            <section class="pointUse layoutCenter">
+                <h2>포인트/사용처</h2>
+                <div class="pointUseBox">
+                    <div>
+                        <a href="">
+                            <span>
+                                포인트 확인하기 (로그인 후 확인가능)
+                            </span>
+                        </a>
+                    </div>
+                      <div>
+                        <a href="">
+                            <span>
+                                HyundaiShop 바로가기
+                            </span>
+                        </a>
+                    </div>
+                      <div>
+                        <a href="">
+                            <span>
+                                자동차용품 찾아보기
+                            </span>
+                        </a>
+                    </div>
+                      <div>
+                        <a href="">
+                            <span>
+                                라이프상품 찾아보기
+                            </span>
+                        </a>
+                    </div>
+                       
+                    
+                </div>
+
+            </section>
+            <section class="pointFooter">
+
+            </section>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>
