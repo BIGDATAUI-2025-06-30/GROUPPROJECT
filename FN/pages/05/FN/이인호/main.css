@@ -1,0 +1,363 @@
+main {
+    background-color: aliceblue;
+    height: 100vh;
+    width: 100%;
+
+}
+
+section {
+    background-color: violet;
+    width: 100%;
+    height: 100%;
+    ;
+
+}
+
+.top {
+    background-color: #e4dcd3;
+    width: 100%;
+    height: 360px;
+
+}
+
+.path {
+    border: 1px solid;
+    width: 1200px;
+    height: 90px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+}
+
+.path>li {
+    padding: 0 14px;
+
+}
+
+
+
+.top-content {
+    background-color: rgba(246, 243, 242, .7);
+    width: 100;
+    height: 270px;
+    margin-left: 60px;
+    margin-right: 60px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.top-content>h1 {
+    margin: 0;
+    font-size: 58px;
+
+}
+
+.top-content>p {
+    margin-top: 40px;
+    font-family: "HyundaiSansTextKR";
+    font-size: 16px;
+    letter-spacing: -.4px;
+    color: #000;
+    line-height: normal;
+    font-weight: 500;
+}
+
+
+/* 중간의 모델선택부터 */
+
+.mid {
+    background-color: rgb(243, 243, 192);
+
+    width: 100%;
+    height: auto;
+}
+
+.model-select {
+    /* 모델선택 있는 한줄 */
+    /* background-color: yellowgreen; */
+    width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    
+    
+    position: relative;
+}
+
+.model-select>h3{
+    /* 모델선택 있는 박스 */
+    /* background-color: aquamarine; */
+    
+    position: absolute;
+    left: 0;
+    margin: 14px 0;
+    
+    height: 34px;
+
+    font-weight: bold;
+
+}
+
+.model-select>.model-select-center{
+    /* car-category 박스와 모델비교 박스도 */
+
+    /* background-color: red; */
+
+    
+    display: flex;
+    align-items: center;
+
+    width: 80%;
+    height: 100%;
+
+    margin: auto;
+
+    position: absolute;
+    right: 0;
+    
+
+}
+
+.model-select-center>.car-category{
+    /* background-color: blue; */
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 80%;
+    height: 100%;
+
+    left: 0;
+    
+}
+
+.model-select-center>.car-category>:nth-child(1)>a{
+    color: rgb(75, 75, 194);
+}
+
+.model-select-center>.model-button-box{
+    /* 모델비교와 버튼이 들어있는 박스 */
+    
+    /* background-color: blueviolet; */
+
+    width: 20%;
+    height: 80%;
+
+    display: flex;
+    align-items: center;
+    
+    position: absolute;
+    right: 0;
+    
+}
+
+.model-button-box>div{
+    /* background-color: hotpink; */
+
+    position: absolute;
+    right: 0;
+
+    display: flex;
+    gap: 15px;
+
+
+    
+}
+
+.model-button-box>div>.check-icon{
+    /* 체크모양를 감싸고 있는 박스 */
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 4px double #ccc;
+    border-radius: 50%;
+
+    width: 22px;
+    height: 22px;
+}
+
+.check-icon>span{
+    color: #ccc;
+}
+
+.model-button-box>div>span{
+    /* 모델비교 글자 부분 */
+}
+
+
+
+
+
+
+
+
+
+.mid-content {
+
+    /* background-color: rgb(181, 41, 90); */
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    
+
+    
+}
+.mid-content>.model-list{
+    /* 차량 모델 박스들이 들어가있는 곳 */
+    background-color: aqua;
+
+    display: flex;
+    flex-wrap: wrap;
+    
+    justify-content: space-evenly;
+}
+
+.model-list-box{
+     /* 차 사진, 차 이름, 차 가격이 포함되어있는 박스의 부모div  */
+    margin: 20px 0;
+
+    width: 250px;
+    height: 250px;
+}
+
+.model-list-box>li{
+    /* 차 사진, 차 이름, 차 가격이 포함되어있는 박스  */
+    
+    background-color: blanchedalmond;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+
+.model-list-box>li>img{
+    width: 100%;
+    
+}
+
+.mid-center{
+    /* 중간의 규정 컨테이너 */
+    background-color: rgb(171, 109, 34);
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+
+    padding: 30px; 
+}
+
+.mid-center>:last-child>a{
+    margin-left: 20px;
+    color: rgb(102, 102, 212);
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+.mid-footer {
+    background-color: rgb(129, 145, 167);
+    width: 100%;
+    height: 180px;
+
+    display: flex;
+    /* flex-direction: column; */
+    
+}
+
+.mid-footer>:first-child{
+    
+}
+
+.information-container{
+    /* 기업정보랑 IR정보, 지속가능경영이 들어가있는 컨테이너 */
+    background-color: orange;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+    
+
+    width: 33%;
+    
+
+}
+
+.information-box{
+    /* 배당조회 지속가능보고서 같은 것들 들어있는 박스 */
+    background-color: blue;
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;    
+    justify-content: space-between;
+
+    
+    
+}
+
+.information-box>a{
+    /* 기업이념 같은 밑에 적히는 것들 */
+    margin: 10px 50px;
+
+    padding: 0;
+
+    
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+.bottom {
+
+    background-color: #ca3d0e;
+    width: 100%;
+    height: 270px;
+    padding: 30px 30px 0;
+
+}
+
+.bottom-top {
+    background-color: purple;
+    width: 1200px;
+    height: 70px;
+    margin: 0 auto;
+    padding: 24px 50px 21px;
+
+}
+
+.bottom-bottom {
+    background-color: rebeccapurple;
+    width: 1200px;
+    height: 170px;
+    margin: 0 auto;
+}
