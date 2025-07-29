@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,152 +10,287 @@
 
 
     <style>
-
-        .blueM_container{
+        .blueM_container {
             background-color: #f6f3f2;
 
         }
 
-        
+
         /* 메인1 */
-        .blueM_container>.breadcrumb{
-            width: auto;
-            height: 400px;
+        .blueM_container>.breadcrumb {
+            display: grid;
+            align-items: end;
+            width: 1900px;
+            height: 370px;
             margin: 0 70px;
-            border: 1px solid;
+            /* border: 1px solid; */
             background-color: #e4dcd1;
+            /* justify-content: center; */
         }
-        .blueM_container>.breadcrumb>.appetizer{
-            padding: 0 100px;
+
+        .blueM_container>.breadcrumb>.appetizer {
+            /* border: 1px solid red; */
+            padding: 10px 330px;
             width: 95%;
             height: 50px;
             margin: 0 auto;
-            border: 1px solid red;
 
         }
-        .blueM_container>.breadcrumb>.appetizer>a{
+
+        .blueM_container>.breadcrumb>.appetizer>span {
+            /* justify-content: space-between; */
+            /* margin: auto 0; */
             font-size: .8rem;
-        }
-        .blueM_container>.breadcrumb>.appetizer>span{
-            font-size: .8rem;
+            font-weight: 500;
+            padding: 20px;
+            position: relative;
         }
 
-        .blueM_container>.breadcrumb>.title-area{
-            border: 1px solid blue;
-            bottom: 0;
-            width: 95%;
-            height: 350px;
+        .blueM_container>.breadcrumb>.appetizer>span+span::before {
+            /* span + span은 앞에 span이 있는 span만 선택 → 첫 번째 span은 제외됨 */
+            position: absolute;
+            left: -6px;
+            top: 27px;
+            content: '';
+            width: 5px;
+            /* 사이즈 */
+            height: 5px;
+            /* 사이즈 */
+            border-top: 2px solid #000;
+            /* 선 두께 */
+            border-right: 2px solid #000;
+            /* 선 두께 */
+            transform: rotate(45deg);
+            /* 각도 */
+            /* 어떻게 인터넷 검색해서 만들어 봤는데
+            이게 내 지식이 됐는지 잘 모르겠따.. */
+
+        }
+
+        .blueM_container>.breadcrumb>.appetizer>a {}
+
+        .blueM_container>.breadcrumb>.title-area {
+            background-color: #f1ede8;
+            /* border: 1px solid blue; */
+            /* margin-top: auto; */
+            width: 99%;
+            height: 290px;
             text-align: center;
             margin: 0 auto;
         }
-        .blueM_container>.breadcrumb>.title-area>.kv_title{
+
+        .blueM_container>.breadcrumb>.title-area>.kv_title {
+            margin: 50px 0;
+            padding-top: 20px;
             font-size: 3rem;
             font-weight: 700;
         }
-        .blueM_container>.breadcrumb>.title-area>.kv_title>small{}
-        .blueM_container>.breadcrumb>.title-area>.text{}
-        
-        
-        /* 메인2 */
-        .blueM_container>.contents{}
-        .blueM_container>.contents>.c1_detail{
-            border: 1px solid;
-            width: 100%;
-            height: 600px;
+
+
+        .blueM_container>.breadcrumb>.title-area>.text {
+            font-size: .95rem;
+            font-weight: 550;
         }
-        .blueM_container>.contents>.c1_detail>.btn-board{
+
+
+        /* 메인2 =========================================================================*/
+        .blueM_container>.contents {}
+
+        .blueM_container>.contents>.c1_detail {
+            background-color: white;
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 650px;
+        }
+
+        .blueM_container>.contents>.c1_detail>.btn-board {
             display: flex;
-            margin: auto;
             width: 100%;
             height: 10%;
-            border: 1px solid;
+            /* border: 1px solid blue; */
             justify-content: center;
         }
-        .blueM_container>.contents>.c1_detail>.btn-board>.Storybtn{
+
+        .blueM_container>.contents>.c1_detail>.btn-board>a {
             width: 30%;
             height: 100%;
             text-align: center;
-            /* border: 1px solid; */
         }
-        .blueM_container>.contents>.c1_detail>.btn-board>.Historybtn{
-            /* border: 1px solid; */
-            text-align: center;
-            width: 30%;
-            height: 100%;
-            color: white;
+
+        .blueM_container>.contents>.c1_detail>.btn-board>a:nth-child(2) {
             background-color: #444444;
-        }
-        
-        .blueM_container>.contents>.c1_detail>.c1_txtboard{
-            text-align: center;
-            border: 1px solid;
-            height: 45%;
-        }
-        .blueM_container>.contents>.c1_detail>.c1_txtboard>h2{
-            
-        }
-        .blueM_container>.contents>.c1_detail>.c1_txtboard>p{}
-        
-        .blueM_container>.contents>.c1_detail>.c1_txtboard2{
-            height: 45%;
-            text-align: center;
-            border: 1px solid;
+            color: white;
 
         }
-        .blueM_container>.contents>.c1_detail>.c1_txtboard2>img{}
-        .blueM_container>.contents>.c1_detail>.c1_txtboard2>p{}
-        
-        
-        /* 메인3 */
-        .blueM_container>.contents>.c2_detail{
-            width: 1100px;
-            border: 1px solid;
-            margin: 80px auto;
+
+        .blueM_container>.contents>.c1_detail>.btn-board>a>div {
+            /* border: 1px solid; */
+            width: 100%;
+            height: 100%;
+            padding: 22px 0;
+            font-weight: 500;
+            font-size: .9rem;
         }
-        .blueM_container>.contents>.c2_detail>.c2_jpg{}
-        .blueM_container>.contents>.c2_detail>.c2_jpg>img{}
-        
-        .blueM_container>.contents>.c2_detail>.c2_detail_text{}
-        .blueM_container>.contents>.c2_detail>.c2_detail_text>h3{}
-        .blueM_container>.contents>.c2_detail>.c2_detail_text>li{}
-        .blueM_container>.contents>.c2_detail>.c2_detail_text>.Shopbtn{}
-        
-        
-        /* 메인4 */
-        .blueM_container>.contents>.c3_detail{
+
+        .blueM_container>.contents>.c1_detail>.btn-board>a>.Storybtn {
+            background-color: white;
+            /* border: 1px solid; */
+        }
+
+        .blueM_container>.contents>.c1_detail>.btn-board>a>.Historybtn {
+            /* border: 1px solid; */
+        }
+
+        .blueM_container>.contents>.c1_detail>.c1_txtboard {
+            text-align: center;
+            /* border: 1px solid blue; */
+            height: 45%;
+            padding: 32px 0px;
+        }
+
+        .blueM_container>.contents>.c1_detail>.c1_txtboard>h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            /* <<궁금 얘 800밑으로 왜 안 바뀌지  */
+        }
+
+        .blueM_container>.contents>.c1_detail>.c1_txtboard>p {
+            font-size: .95rem;
+            font-weight: 550;
+        }
+
+        .blueM_container>.contents>.c1_detail>.c1_txtboard2 {
+            height: 45%;
+            text-align: center;
+            /* border: 1px solid; */
+            padding: 60px 0px;
+
+        }
+
+        .blueM_container>.contents>.c1_detail>.c1_txtboard2>img {
+            margin-bottom: 30px;
+        }
+
+        .blueM_container>.contents>.c1_detail>.c1_txtboard2>p {
+            font-size: .95rem;
+            font-weight: 600;
+        }
+
+
+
+
+
+        /* 메인3 ============================================================================*/
+        .blueM_container>.contents>.c2_detail {
+            position: relative;
+            width: 1120px;
+            height: 300px;
+            /* border: 1px solid; */
+            margin: 80px auto;
+            display: flex;
+            background-color: white;
+        }
+
+        .blueM_container>.contents>.c2_detail>.c2_jpg {
+            /* border: 1px solid; */
+            width: 300px;
+            height: 300px;
+            display: flex;
+            /* 사진에 마진 오토 줘서 플렉스만 해줘도 중간으로 가넹 */
+            /* align-items: center; */
+            /* justify-content: center; */
+        }
+
+        .blueM_container>.contents>.c2_detail>.c2_jpg>img {
+            width: 200px;
+            height: 200px;
+            margin: auto;
+        }
+
+        .blueM_container>.contents>.c2_detail>.c2_detail_text {
+            position: absolute;
+            left: 360px;
+            top: 50px;
+
+        }
+
+        .blueM_container>.contents>.c2_detail>.c2_detail_text>.c2_h2box {
+            /* gap: 0;  <<<궁금 얘 간격 없애는 방법*/
+        }
+
+        .blueM_container>.contents>.c2_detail>.c2_detail_text>.c2_h2box>h3 {
+            display: inline-block;
+
+
+        }
+
+        .blueM_container>.contents>.c2_detail>.c2_detail_text>.c2_libox {
+            /* gap: 2px; */
+        }
+
+        .blueM_container>.contents>.c2_detail>.c2_detail_text>.c2_libox>li {
+            font-size: .95rem;
+            font-weight: 600;
+            line-height: 24px;
+            /* 리스트 간격 주기 !!!!! */
+        }
+
+        .blueM_container>.contents>.c2_detail>.c2_detail_text>.c2_libox>li::marker {
+            /* ::marker는 li요소 앞에 점을 선택하는 가상 선택자라고 하네용 */
+            font-size: 0.5rem;
+            /* <<<<<궁금 얘를 어떻게 글씨 중간 높이로 올리지 */
+            /* align-self: center; */
+            /* content: "●"; */
+            /* margin-bottom: 1px; */
+        }
+
+        .blueM_container>.contents>.c2_detail>.c2_detail_text>.c2_askin> {
+            /* border: 1px solid; */
+            /* width: 50px;
+            height: 50px; */
+            /* background-color: #002c5f;
+            color: white; */
+            /* 궁금 << 얘 위스 헤이트 왜 안 잡힘???? */
+        }
+        .blueM_container>.contents>.c2_detail>.c2_detail_text>.c2_askin>a {
+            /* a태그는 위스 헤이트 안 잡히는 거 기억하기. */
+            
+        }
+
+
+
+
+
+        /* 메인4 ====================================================================*/
+        .blueM_container>.contents>.c3_detail {
             border: 1px solid red;
             display: flex;
             justify-content: center;
             gap: 30px;
         }
-        .blueM_container>.contents>.c3_detail>a{}
-        .blueM_container>.contents>.c3_detail>a>img{
+
+        .blueM_container>.contents>.c3_detail>a {}
+
+        .blueM_container>.contents>.c3_detail>a>img {
             border: 1px solid;
         }
-        .blueM_container>.contents>.c3_detail>a>p{}
-        
-        
+
+        .blueM_container>.contents>.c3_detail>a>p {}
+
+
         /* 메인5 */
-        .blueM_container>.contents>.last{
+        .blueM_container>.contents>.last {
             border: 1px solid yellow;
             height: 160px;
             display: flex;
             justify-content: right;
         }
-        .blueM_container>.contents>.last>a{
+
+        .blueM_container>.contents>.last>a {
             margin: 60px 80px;
             font-size: 2rem;
 
         }
-        
-
-
-
-
-
-
-
-
     </style>
 
 
@@ -166,8 +302,9 @@
 
 
 </head>
+
 <body>
-    
+
 
     <div class="wrapper">
         <header>
@@ -179,32 +316,37 @@
                 <div class="blueM_container">
                     <div class="breadcrumb">
                         <div class="appetizer">
-                            <a href="">홈</a>
+                            <span><a href="javascript:void(0)">홈</a></span>
                             <span>서비스/멤버십</span>
                             <span>블루멤버스</span>
                             <span>블루멤버스 소개</span>
                         </div>
                         <div class="title-area">
-                                <h1 class="kv_title">
-                                    블루멤버스 소개
-                                    <small></small>
-                                </h1>
-                                <p class="text">현대자동차 오너를 위한 블루멤버스의 이야기와 역사를 한 눈에 알아보시기 바랍니다.</p>
+                            <h1 class="kv_title">
+                                블루멤버스 소개
+                            </h1>
+                            <p class="text">현대자동차 오너를 위한 블루멤버스의 이야기와 역사를 한 눈에 알아보시기 바랍니다.</p>
                         </div>
                     </div>
                     <div class="contents">
                         <div class="c1_detail">
                             <div class="btn-board">
-                                <div class="Storybtn">블루멤버스 Story</div>
-                                <div class="Historybtn">블루멤버스 History</div>
+                                <a href="javascript:void(0)">
+                                    <div class="Storybtn"> 블루멤버스 Story</div>
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <div class="Historybtn">블루멤버스 History</div>
+                                </a>
                             </div>
                             <div class="c1_txtboard">
-                                <h2>블루멤버스 Story</h2>
-                                <p>블루멤버스는 2007년부터 시작된 현대자동차 오너를 위한 고객 서비스 입니다.<br/>고객님들의 보다 즐겁고 안전한 자동차 생활을 위해 항상 노력하겠습니다.</p>
+                                <h1>블루멤버스 Story</h1>
+                                <p>블루멤버스는 2007년부터 시작된 현대자동차 오너를 위한 고객 서비스 입니다.<br />고객님들의 보다 즐겁고 안전한 자동차 생활을 위해 항상
+                                    노력하겠습니다.</p>
                             </div>
                             <div class="c1_txtboard2">
                                 <img src="/FN/image/블루멤버스소개1.jpg" alt="">
-                                <p>블루멤버스 로고는 현대자동차를 드라이빙하는 고객을 상징화하여<br/>고객의 즐거운 자동차 생활을 유지하고 업그레이드 해주는 현대자동차의 서비스 마인드를 상징합니다.</p>
+                                <p>블루멤버스 로고는 현대자동차를 드라이빙하는 고객을 상징화하여<br />고객의 즐거운 자동차 생활을 유지하고 업그레이드 해주는 현대자동차의 서비스 마인드를
+                                    상징합니다.</p>
                             </div>
                         </div>
                         <div class="c2_detail">
@@ -212,11 +354,17 @@
                                 <img src="/FN/image/블루멤버스소개2.jpg" alt="">
                             </div>
                             <div class="c2_detail_text">
-                                <h3>현대닷컴 회원으로 가입하시면 더 많은 블루멤버스 혜택을 이용하실 수 있습니다.</h3>
-                                <li>블루멤버스 전용 이벤트 제공</li>
-                               <li>블루멤버스에게 제공되는 다야항 혜택 안내</li>
-                                <li>기타 특화 서비스 제공</li>
-                                <div class="Shopbtn">HyundaiShop 바로가기</div>
+                                <div class="c2_h2box">
+                                    <h3>현대닷컴 회원으로 가입하시면 </h3>
+                                    <h3 style="color:#006992">더 많은 블루멤버스 혜택</h3>
+                                    <h3>을 이용하실 수 있습니다.</h3>
+                                </div>
+                                <div class="c2_libox">
+                                    <li>블루멤버스 전용 이벤트 제공</li>
+                                    <li>블루멤버스에게 제공되는 다야항 혜택 안내</li>
+                                    <li>기타 특화 서비스 제공</li>
+                                </div>
+                                <div class="c2_askin"><a href="javascript:void(0)">HyundaiShop 바로가기</a></div>
                             </div>
                         </div>
                         <div class="c3_detail">
@@ -229,7 +377,7 @@
                                 <p>Hyundai Mobility카드 안내</p>
                             </a>
                             <a href="#">
-                                 <img src="/FN/image/블루멤버스소개5.jpg" alt="">
+                                <img src="/FN/image/블루멤버스소개5.jpg" alt="">
                                 <p>블루멤버스 카드 재발급</p>
                             </a>
                         </div>
@@ -241,8 +389,9 @@
             </section>
         </main>
 
-        
+
         <footer></footer>
     </div>
 </body>
+
 </html>
