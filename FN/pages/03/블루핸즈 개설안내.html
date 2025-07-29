@@ -14,7 +14,7 @@
 
         body {
             font-family: "Noto Sans KR", sans-serif;
-            background-color: #fff;
+            background: #fff;
             color: #000;
         }
 
@@ -24,49 +24,36 @@
 
         .Top-Warpper>header {
             height: 270px;
-
             text-align: center;
             background: #f4f0eb;
-            margin-left: 45px;
-            margin-right: 45px;
-            padding: 40px 0 10px;
-
-            background: #f4f0eb;
+            margin: 0 45px;
             padding: 36px 90px;
-            vertical-align: middle;
         }
 
-        .breadcrumb a {
-            color: inherit;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            /* height: 100%; */
+        .Top-Warpper>header>h1 {
+            font-size: 56px;
+            font-family: 'HeadMedium';
+            margin-bottom: 18px;
         }
 
         .breadcrumb {
             display: flex;
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: 90px;
-            max-width: 1120px;
-
-            margin: 0 auto;
-            /* background: #e6ded2; */
+            align-items: center;
             padding: 10px 20px;
             font-size: 13px;
-            color: #000;
+            max-width: 1120px;
+            margin: 0 auto;
+            height: 90px;
+        }
+
+        .breadcrumb a {
+            text-decoration: none;
+            color: inherit;
         }
 
         .breadcrumb span {
-
             position: relative;
-            padding: 0 0 0 27px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
+            padding-left: 27px;
         }
 
         .breadcrumb span:first-child {
@@ -74,227 +61,251 @@
         }
 
         .breadcrumb span:not(:first-child)::before {
-            content: '\003e';
-            /* '>' 문자 */
+            content: ">";
             position: absolute;
             left: 0;
             color: #777;
         }
 
-
-
-        .Top-Warpper>header>h1 {
-            font-size: 56px;
-            padding-bottom: 18px;
-            font-family: 'HeadMedium';
-            margin: 0.67em 0;
+        h2 {
+            margin-bottom: 40px;
+            font-size: 30px;
         }
-
-        .Top-Warpper>header>p {
-
-            color: #000;
-            font-weight: normal;
-
-
-        }
-
 
         .tab-menu {
-            height: 60px;
-            /* width: 100%; */
-            width: 100%;
-            border: 1px solid;
             display: flex;
-            background-color: #444444;
-
-
+            background-color: #444;
         }
 
-        .tab-menu>a {
-            text-decoration: none;
-            display: inline-flex;
-            height: 100%;
-            width: 100%;
-            padding: 0 15px;
-            font-family: 'TextMedium';
+        .tab-menu button {
+            flex: 1;
+            border: none;
+            background: #444;
+            color: #fff;
             font-size: 15px;
             line-height: 60px;
-            color: #fff;
             cursor: pointer;
-            text-align: center;
-            justify-content: center;
-
-
+            transition: background 0.3s, color 0.3s;
         }
 
-
-        .tab-menu>a>span:first-child {
-            padding-left: 0;
+        .tab-menu button.active {
+            background: #fff;
+            color: #000;
         }
 
-        .tab-menu>a>span:not(:first-child)::before {
-            content: '\003e';
-            /* '>' 문자 */
-            position: absolute;
-            left: 0;
-            color: #777;
-
-        }
-
-
-
-
-
-
-
-
-
-
-        /* .tab-menu .active {
-            display: inline-block;
-            vertical-align: middle;
-        } */
-
-        main {
-
+        .tab-content {
             max-width: 1120px;
             margin: 60px auto;
             padding: 0 20px;
         }
 
-        main h2 {
-            font-size: 24px;
-            font-weight: bold;
+        .tab-pane {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .tab-pane.active {
+            display: block;
+            opacity: 1;
+        }
+
+        h3 {
             margin-bottom: 30px;
         }
 
-        .steps-container {
-            height: 439px;
+        .cost-table {
             width: 100%;
-            background: #F8F5F4;
-            padding: 37px 0 0;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
 
+        .cost-table th,
+        .cost-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .cost-table th {
+            background: #002F6C;
+            color: #fff;
+            font-weight: normal;
+        }
+
+        .cost-table tbody th {
+            background: #e4dcd3;
+            color: #000;
+        }
+
+        .table-note {
+            font-size: 13px;
+            margin-top: 10px;
+            color: #444;
+        }
+
+        .steps-container {
+            background: #f8f5f4;
+            padding-top: 37px;
         }
 
         .icons {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
-            text-align: center;
             margin-bottom: 30px;
+            position: relative;
         }
 
         .icons div {
             flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .icons div:not(:last-child)::after {
+            content: '>';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #bbb;
+            font-size: 20px;
         }
 
         .icons div img {
-            height: 63px;
             width: 63px;
-            margin-bottom: 10px;
-
+            height: 63px;
         }
 
         .icons div p {
             font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .icons div.active p {
+            color: #007fa8;
+            font-weight: bold;
         }
 
         .icons-sub {
-            height: 286px;
-            padding: 73px 0 40px;
             border-top: 1px solid #e5e5e5;
-
-
+            padding: 73px 0 40px;
+            text-align: center;
         }
 
         .explanation {
-            height: 60px;
-            text-align: center;
-            font-size: 14px;
-            /* margin-bottom: 30px; */
+            font-size: 16px;
+            line-height: 1.8;
             color: #222;
+            margin-bottom: 40px;
         }
 
         .steps-bottom {
             display: flex;
-            height: 32px;
-
-            line-height: 32px;
+            justify-content: center;
+            gap: 30px;
             font-size: 18px;
-            font-weight: bold;
-            color: #0078d4;
         }
 
-        .steps-bottom>div>li {
+        .steps-bottom li {
             display: flex;
-            font-size: 18px;
+            align-items: center;
+            list-style: none;
         }
 
-        .steps-bottom>div>li .num {
-            border: 1px solid;
+        .steps-bottom .num {
             width: 32px;
             height: 32px;
-            line-height: 32px;
-            margin-right: 11px;
             border-radius: 50%;
-            background-color: #007fa8;
+            background: #007fa8;
             color: #fff;
             text-align: center;
+            line-height: 32px;
+            margin-right: 11px;
         }
 
-        .steps-bottom>div>li::before {
-            display: block;
-            content: "";
+        .steps-bottom li::before {
+            content: '';
             width: 60px;
             height: 1px;
-            margin: 15px 20px 0;
             background: #ccc;
+            margin: 0 20px;
         }
 
-        .steps-bottom div .txt {
-            color: black;
+        .steps-bottom li:first-child::before {
+            content: none;
         }
 
         .arrow-container-wrapper {
             width: 100%;
-           display: flex;
-            justify-content: center;
         }
 
-        .arrow-container-wrapper .arrow-container {
-            height: 69px;
-            width: 100%;
-            /* max-width: 1120px; */
-            margin: 0 auto;
-            background-color: #e4dcd3;
+        .arrow-container {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
-            margin-top: 70px;
-            margin-bottom: 70px;
-            overflow: hidden;
-            color: #000;
+            background: #e4dcd3;
+            padding: 40px 20px;
             font-size: 30px;
-            padding: 64px 0;
-
-        }
-
-        .arrow-text {
-            font-size: 20px;
             font-weight: bold;
-            position: relative;
         }
 
         .arrow-text.left::before {
-            content: "〈";
-            /* 왼쪽 화살표 */
+            content: '<';
             margin-right: 10px;
         }
 
         .arrow-text.right::after {
-            content: "〉";
-            /* 오른쪽 화살표 */
+            content: '>';
             margin-left: 10px;
+        }
+
+        .benefits-container {
+            background: #F8F5F4;
+            padding: 20px 20px;
+            border-radius: 8px;
+        }
+
+        .benefits-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .benefit {
+            width: 48%;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+
+        .benefit img {
+            width: 120px;
+            height: 120px;
+            margin-left: 12px;
+            margin-right: 34px;
+            
+            flex-shrink: 0;
+        }
+
+        .benefit-content h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .benefit-content ul {
+            list-style: disc inside;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #222;
+        }
+
+        .benefits-divider {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -302,133 +313,254 @@
 <body>
     <div class="Top-Warpper">
         <div class="breadcrumb">
-            <a href="">홈</a>
-            <span>서비스/멤버십</span>
-            <span>블루핸즈 가맹사업</span>
-            <span>가맹점 개설 안내</span>
-            <span>개설 절차</span>
+            <a href="#">홈</a><span>서비스/멤버십</span><span>블루핸즈 가맹사업</span><span>가맹점 개설 안내</span><span>개설 절차</span>
         </div>
-
         <header>
             <h1>블루핸즈 가맹점 개설 안내</h1>
             <p>블루핸즈 개설 관련 정보를 안내드립니다.</p>
         </header>
     </div>
-    <div class="tab-menu">
-        <a href=""><span>개설 절차</span></a>
-        <a href=""><span>개설 비용</span></a>
-        <a href=""><span>지원 혜택</span></a>
 
+    <div class="tab-menu">
+        <button class="active" data-tab="tab1">개설 절차</button>
+        <button data-tab="tab2">개설 비용</button>
+        <button data-tab="tab3">지원 혜택</button>
+    </div>
+
+    <div class="tab-content">
+        <div id="tab1" class="tab-pane active">
+            <h2>개설 절차</h2>
+            <div class="steps-container">
+                <div class="icons">
+                    <div class="active"><img
+                            src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/bluehands/icon-bluehands-openingprocess-01-off-pc.png"
+                            alt="">
+                        <p>블루핸즈 공모</p>
+                    </div>
+                    <div><img
+                            src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/bluehands/icon-bluehands-openingprocess-02-off-pc.png"
+                            alt="">
+                        <p>내인가</p>
+                    </div>
+                    <div><img
+                            src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/bluehands/icon-bluehands-openingprocess-03-off-pc.png"
+                            alt="">
+                        <p>본인가</p>
+                    </div>
+                    <div><img
+                            src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/bluehands/icon-bluehands-openingprocess-04-off-pc.png"
+                            alt="">
+                        <p>가맹계약 체결</p>
+                    </div>
+                </div>
+                <div class="icons-sub">
+                    <div class="explanation">블루핸즈 가맹점은 공모를 통해 모집합니다.<br>서류 심사 및 면접을 거쳐 선정된 가망희망자에게는 후속 절차를 안내합니다.</div>
+                    <ul class="steps-bottom">
+                        <li><span class="num">1</span><span class="txt">블루핸즈 공모</span></li>
+                        <li><span class="num">2</span><span class="txt">신청서 접수</span></li>
+                        <li><span class="num">3</span><span class="txt">서류 심사 및 면접</span></li>
+                        <li><span class="num">4</span><span class="txt">후속업무 안내</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab2" class="tab-pane">
+            <h2>개설 비용</h2>
+            <h3>개설 비용</h3>
+            <table class="cost-table">
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>지급대상</th>
+                        <th>금액 (단위: 천 원)</th>
+                        <th>지급 기준</th>
+                        <th>반환 조건</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>순정 부품 구입</th>
+                        <td>현대모비스㈜ 및 대리점</td>
+                        <td>개별 계약에 따름</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>최소한의 부품확보 및 조달체계 구축</td>
+                    </tr>
+                    <tr>
+                        <th>지정품 구입</th>
+                        <td>현대모비스㈜ 및 대리점</td>
+                        <td>개별 계약에 따름</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>블루기본점검 지급품 구비</td>
+                    </tr>
+                    <tr>
+                        <th>간판 변경</th>
+                        <td>간판제작 업체</td>
+                        <td>3,000~30,000</td>
+                        <td>계약에 따름</td>
+                        <td>계약에 따름</td>
+                        <td>개별계약에 따름</td>
+                    </tr>
+                    <tr>
+                        <th>인테리어 시설·장비 구입</th>
+                        <td>시공·장비 제공업체</td>
+                        <td>700,000~3,000,000</td>
+                        <td>계약에 따름</td>
+                        <td>계약에 따름</td>
+                        <td>개별계약에 따름</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-note">※ 상기 금액은 실제 지불 금액과 다를 수 있으며 인테리어 시설/장비 비용은 블루핸즈 운영 형태에 따라 차이가 있습니다.</p>
+            <h3>영업 개시 이후 비용</h3>
+            <table class="cost-table">
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>지급대상</th>
+                        <th>금액 (단위: 천 원)</th>
+                        <th>지급 기준</th>
+                        <th>반환 조건</th>
+                        <th>반환 불가 사유</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>총계</td>
+                        <td>-</td>
+                        <td>[2,600~1,031,400]</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">가맹금</th>
+                        <td>종합 블루핸즈</td>
+                        <td>900~1,400/월</td>
+                        <td>익월 첫 주 목요일</td>
+                        <td>-</td>
+                        <td>브랜드 사용·경영지원·교육</td>
+                        <td>VAT 별도</td>
+                    </tr>
+                    <tr>
+                        <td>전문 블루핸즈</td>
+                        <td>600~900/월</td>
+                        <td>익월 첫 주 목요일</td>
+                        <td>-</td>
+                        <td>브랜드 사용·경영지원·교육</td>
+                        <td>VAT 별도</td>
+                    </tr>
+                    <tr>
+                        <td>포인트 적립금</td>
+                        <td>최종 고객</td>
+                        <td>결제금액의 0.5%</td>
+                        <td>매월 넷째주 목요일</td>
+                        <td>-</td>
+                        <td>고객적립 포인트</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>긴급출동 스마트폰 비용</td>
+                        <td>선택한 통신업체</td>
+                        <td>개별 계약에 따름</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>10,000원/월(별도)</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-note">※ 상기 금액은 실제 지불 금액과 다를 수 있으며 차이가 있습니다.</p>
+        </div>
+
+        <div id="tab3" class="tab-pane">
+            <h2>지원 혜택</h2>
+            <div class="benefits-container">
+                <div class="benefits-row">
+                    <div class="benefit">
+                        <img src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/bluehands/icon-bluehands-support-benefits-01-pc.png"
+                            alt="가맹점 운영교육">
+                        <div class="benefit-content">
+                            <h3>가맹점 운영교육</h3>
+                            <ul>
+                                <li>신규 개소 가맹점 대상 가맹사업의 이해, 전산 교육</li>
+                                <li>우수 블루핸즈 대상 리더십 역량 강화 교육</li>
+                                <li>서비스 향상 필요 블루핸즈 대상 맞춤 컨설팅</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <img src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/bluehands/icon-bluehands-support-benefits-02-pc.png"
+                            alt="표준 매뉴얼 제공">
+                        <div class="benefit-content">
+                            <h3>표준 매뉴얼 제공</h3>
+                            <ul>
+                                <li>차량 정비 매뉴얼</li>
+                                <li>블루핸즈 업무 매뉴얼</li>
+                                <li>블루핸즈 고객 응대 매뉴얼</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr class="benefits-divider">
+                <div class="benefits-row">
+                    <div class="benefit">
+                        <img src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/bluehands/icon-bluehands-support-benefits-03-pc.png"
+                            alt="가맹점 지원혜택">
+                        <div class="benefit-content">
+                            <h3>가맹점 지원혜택</h3>
+                            <ul>
+                                <li>현대자동차 차량 할인 (대표자 5%, 직원 3%) ※ 블루핸즈 근속기간 6개월 이상</li>
+                                <li>경조사 및 하계휴양소 지원</li>
+                                <li>블루핸즈 전용몰 운영 및 체육복 구매 지원</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <img src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/bluehands/icon-bluehands-support-benefits-04-pc.png"
+                            alt="우수 엔지니어 양성 지원">
+                        <div class="benefit-content">
+                            <h3>우수 엔지니어 양성 지원</h3>
+                            <ul>
+                                <li>지역 맞춤형 민관 협력 엔지니어 채용 지원</li>
+                                <li>블루핸즈 엔지니어 기술 교육</li>
+                                <li>서비스 기술인증제 HMCP 운영 ※ Hyundai Master Certification Program</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
     </div>
-    <!-- <div>
-        <h2>개설 절차</h2>
-        </div> -->
-    <main>
-        <div>
-            <h2>개설 절차</h2>
+
+    <div class="arrow-container-wrapper">
+        <div class="arrow-container">
+            <div class="arrow-text left">가맹사업 소개</div>
+            <div class="arrow-text right">가맹점 모집</div>
         </div>
-        <div class="steps-container">
-            <div class="icons">
-                <div>
-                    <img src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/bluehands/icon-bluehands-openingprocess-01-off-pc.png"
-                        alt="">
-                    <p>블루핸즈 공모</p>
-                </div>
-                <div>
-                    <img src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/bluehands/icon-bluehands-openingprocess-02-off-pc.png"
-                        alt="">
-                    <p>내인가</p>
-                </div>
-                <div>
-                    <img src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/bluehands/icon-bluehands-openingprocess-03-off-pc.png"
-                        alt="">
-                    <p>본인가</p>
-                </div>
-                <div>
-                    <img src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/customer-service/bluehands/icon-bluehands-openingprocess-04-off-pc.png"
-                        alt="">
-                    <p>가망계약 체결</p>
-                </div>
-            </div>
-            <div class="icons-sub">
-                <div class="explanation">
-                    블루핸즈 가맹점은 공모를 통해 모집합니다.<br>
-                    서류 심사 및 면접을 거쳐 선정된 가망희망자에게는 후속 절차를 안내합니다.
-                </div>
+    </div>
 
-                <div class="steps-botton ">
-                    <!-- <ul>
-                        <li>
-                            <span class="num">1</span>
-                            <span class="txt">블루핸즈 공모</span>
-                        </li>
-                        <li class="step02">
-                            <span class="num">2</span>
-                            <span class="txt">신청서 접수</span>
-                        </li>
-                        <li class="step03">
-                            <span class="num">3</span>
-                            <span class="txt">서류 심사 및 면접</span>
-                        </li>
-                        <li class="step04">
-                            <span class="num">4</span>
-                            <span class="txt">후수역무 안내</span>
-                        </li>
-                        
-                    </ul>
-                </div> -->
-                    <div class="steps-bottom">
-                        <div>
-                            <li>
-                                <span class="num">1</span>
-                                <span class="txt">블루핸즈 공모</span>
-                            </li>
-                        </div>
-
-                        <div>
-                            <li class="step02">
-
-                                <span class="num">2</span>
-                                <span class="txt">신청서 접수</span>
-                            </li>
-                        </div>
-
-
-                        <div>
-                            <li class="step03">
-
-                                <span class="num">3</span>
-                                <span class="txt">서류 심사 및 면접</span>
-                            </li>
-                        </div>
-
-                        <div>
-                            <li class="step04">
-
-                                <span class="num">4</span>
-                                <span class="txt">후수역무 안내</span>
-                            </li>
-                        </div>
-                    </div>
-
-                </div>
-
-
-
-
-
-
-            </div>
-            <div class="arrow-container-wrapper">
-                <div class="arrow-container">
-                    <div class="arrow-text left">가맹사업 소개</div>
-                    <div class="arrow-text right">가맹점 모집</div>
-                </div>
-            </div>
-    </main>
+    <script>
+        const tabs = document.querySelectorAll('.tab-menu button');
+        const panes = document.querySelectorAll('.tab-pane');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                panes.forEach(p => p.classList.remove('active'));
+                const target = tab.getAttribute('data-tab');
+                tab.classList.add('active');
+                document.getElementById(target).classList.add('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
