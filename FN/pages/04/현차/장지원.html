@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .bg {
+            position: relative;
+            width: 100%;
+            height: auto;
+            min-height: 500px;
+        }
+
+        .bg img {}
+
+        .top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background: transparent;
+            z-index: 10;
+        }
+
+        .t1 {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 90px;
+            max-width: 1120px;
+            margin: 0 auto;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            color: black;
+        }
+
+        .t1>a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: 555;
+        }
+
+        .t1>span {
+            padding: 10px;
+            font-weight: 555;
+        }
+
+        .t1>.sp_b {
+            font-weight: bold;
+        }
+
+        .t1>span::before {
+            content: ">";
+            margin-right: 8px;
+            display: inline-block;
+            width: 6px;
+            height: 12px;
+        }
+
+
+        .bl_mem {
+            position: absolute;
+            top: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            min-height: calc(100% - 1381px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: calc(100% - 150px);
+            margin: 0 auto;
+            background-color: #F1EDE8;
+        }
+
+        .bl_mem .bl_mem_sec {
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            height: 150px;
+        }
+
+        .bl_mem h1 {
+            font-weight: bold;
+            margin: 0;
+            font-size: 56px;
+            position: absolute;
+            top: 0;
+
+        }
+
+        .bl_mem p {
+            margin-top: 100px;
+        }
+
+        .process {
+            background-color: #fff;
+            max-width: 1280px;
+            margin: 80px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .pro-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .pro-card_box {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            height: 235px;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .pro-card {
+            background-color: #e7dfd5;
+            flex: 1 1 calc(33.333% - 20px);
+            min-width: 280px;
+            height: 100%;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: 500;
+            line-height: 1.6;
+            box-sizing: border-box;
+            font-size: 20px;
+        }
+
+        .pro-arrow {
+            font-size: 30px;
+            width: 17px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .notice-section {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #333;
+            margin: 20px 0;
+            margin-left: 9px;
+        }
+
+
+        .notice-section dt {
+            margin-top: 20px;
+        }
+
+
+        .notice-section .notice-dot::before {
+            content: "⦁";
+            display: inline-block;
+            margin-right: 6px;
+            color: #666;
+        }
+
+
+        .notice-section dt strong {
+            font-weight: bold;
+        }
+
+        .notice-section dd {
+            margin: 0 0 20px 10px;
+        }
+
+        .notice-section dd ul {
+            padding-left: 15px;
+            margin: 5px 0 0 0;
+        }
+
+        .notice-section dd ul li {
+            position: relative;
+            list-style: none;
+            padding-left: 1.2em;
+        }
+
+        .notice-section dd ul li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+        }
+
+        .myhyundai-box {
+            max-width: 1100px;
+            margin: 60px auto;
+            border: 1px solid #ddd;
+            padding: 40px;
+            background-color: #fff;
+        }
+
+        /* 로고 + 설명 배치 */
+        .myhyundai-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            /* 간격 조절 */
+        }
+
+        /* 로고 영역 */
+        .myhyundai-logo img {
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            object-fit: contain;
+        }
+
+        /* 텍스트 콘텐츠 */
+        .myhyundai-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .myhyundai-content p {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .myhyundai-content ul {
+            margin: 0 0 20px 0;
+            padding-left: 0;
+        }
+
+        .myhyundai-content li {
+            list-style: none;
+            position: relative;
+            padding-left: 1.2em;
+            margin-bottom: 4px;
+        }
+
+        .myhyundai-content li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+        }
+
+        /* 버튼 */
+        .down-btn {
+            background-color: #002c5f;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="bg">
+            <img src="./image/1.avif" alt="배경 이미지" />
+
+
+            <section class="top">
+                <div class="t1">
+                    <a href="">홈</a>
+                    <span>서비스/멤버십</span>
+                    <span>블루멤버스</span>
+                    <span>Hyundai Mobility카드</span>
+                    <span class="sp_b">재발급 신청안내</span>
+                </div>
+            </section>
+
+            <section class="bl_mem">
+                <div class="bl_mem_sec">
+                    <h1>재발급 신청안내</h1>
+                    <p>블루멤버스 비신용 카드 분실 시 재발급을 도와드립니다.</p>
+                </div>
+            </section>
+
+            <section class="process">
+                <h2 class="pro-title">신청 프로세스</h2>
+                <div class="pro-card_box">
+                    <div class="pro-card">
+                        분실확인 즉시 고객센터에 신고
+                        <div class="pro_card">010-1234-5678</div>
+                    </div>
+                    <div class="pro_arrow">&gt;</div>
+                    <div class="pro-card" style="background-color: #F6F3F2;">
+                        <div>새로운 블루멤버스</div>
+                        <div>비신용 카드 재발급</div>
+                    </div>
+                    <div class="pro_arrow">&gt;</div>
+                    <div class="pro-card">
+                        1~2주 후 해당주소로 발송
+                    </div>
+                </div>
+            </section>
+
+            <dl class="notice-section">알려드립니다
+                <dt>분실신고 및 재발급 신청
+                    <p class="notice-dot"><strong>개인</strong></p>
+                </dt>
+                <dd>
+                    <ul>
+                        <li>Hyundai Mobility카드 분실 확인 즉시 현대카드사로 문의하세요. <a href="[현대카드 웹사이트 바로가기]"></a></li>
+                        <li>블루멤버스 비신용카드 분실 확인 즉시 현대자동차 고객센터(☎010-1234-5678)로 연락주시면 처리됩니다.</li>
+                        <li>카드 재발급 시 새로운 카드번호가 부여되며 기존의 카드는 사용이 정지됩니다.</li>
+                    </ul>
+                </dd>
+
+                <dt>
+                    <p class="notice-dot"><strong>법인</strong></p>
+                </dt>
+                <dd>
+                    <ul>
+                        <li>블루멤버스 법인 비신용카드는 최초 발급시 사업자번호 당 1장 발급되며, 추가발급은 고객센터(☎010-1234-5678)로 요청바랍니다.</li>
+                        <li>블루멤버스 카드 추가 발급 시 블루멤버스 포인트는 신규 카드에도 사용 권한이 주어집니다.</li>
+                    </ul>
+                </dd>
+
+                <dt>
+                    <p class="notice-dot"><strong>블루멤버스 비신용카드 비밀번호</strong></p>
+                </dt>
+                <dd>
+                    <ul>
+                        <li>개인회원 초기 비밀번호는 주민번호 뒷 4자리('14. 8. 4. 이전가입) 또는 생월생일 4자리(EX: 6월 15일일 경우, 0615)입니다. ('14. 8. 4
+                            이후가입)</li>
+                        <li>법인회원 초기 비밀번호는 사업자번호 뒷 4자리입니다.</li>
+                        <li>개인정보보호을 위해 카드 수령 후 반드시 비밀번호를 변경하시기 바랍니다.</li>
+                        <li>비밀번호 변경은 현대자동차 고객센터 (☎010-1234-5678) 혹은 [카드 관리 &gt; 비밀번호 변경]에서 하실 수 있습니다.
+                            (신용카드의 경우 비신용카드와 별도로 현대카드를 통해 비밀번호를 등록하셔야 합니다.)</li>
+                    </ul>
+                </dd>
+            </dl>
+            <section class="myhyundai-box">
+                <div class="myhyundai-container">
+                    <div class="myhyundai-logo">
+                        <img src="hyundai-logo.png" alt="현대 로고" />
+                    </div>
+                    <div class="myhyundai-content">
+                        <h3>마이 현대 (myHyundai)</h3>
+                        <p>차량 제어부터 관리, 충전, 멤버십까지. 모든 것을 한 곳에서 해결하세요.</p>
+                        <ul>
+                            <li>* 항목1</li>
+                            <li>* 항목2</li>
+                        </ul>
+                        <button class="down-btn">앱 다운로드</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>
