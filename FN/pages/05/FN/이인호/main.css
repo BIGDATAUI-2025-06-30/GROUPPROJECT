@@ -285,8 +285,18 @@ section {
     
 }
 
-.mid-footer>:first-child{
-    
+.mid-footer>h4{
+    margin-bottom: 10px;
+}
+
+
+.information-wrapper{
+    background-color: #d66641;
+
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
 }
 
 .information-container{
