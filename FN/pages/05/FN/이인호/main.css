@@ -1,7 +1,20 @@
+html, body{
+    height: 100%;
+    /* margin: 0; */
+}
+
+.wrapper{
+    min-width: 100%;
+    /* display: flex; */
+    /* flex-direction: column; */
+}
+
 main {
     background-color: aliceblue;
     height: 100vh;
     width: 100%;
+
+    /* flex: 1; */
 
 }
 
@@ -72,21 +85,27 @@ section {
 /* 중간의 모델선택부터 */
 
 .mid {
-    background-color: rgb(243, 243, 192);
+    background-color:white;
 
     width: 100%;
     height: auto;
 }
 
+.model-select-container{
+    background-color: white;
+}
+
 .model-select {
-    /* 모델선택 있는 한줄 */
-    /* background-color: yellowgreen; */
+    /* 모델선택부터 체크까지 중간만*/
+    
     width: 1200px;
     height: 60px;
     margin: 0 auto;
+    
     display: flex;
     
-    
+    border-bottom: 1px solid #ccc;
+
     position: relative;
 }
 
@@ -95,7 +114,7 @@ section {
     /* background-color: aquamarine; */
     
     position: absolute;
-    left: 0;
+    left: 5px;
     margin: 14px 0;
     
     height: 34px;
@@ -154,7 +173,7 @@ section {
     align-items: center;
     
     position: absolute;
-    right: 0;
+    right: 5px;
     
 }
 
@@ -213,7 +232,7 @@ section {
 }
 .mid-content>.model-list{
     /* 차량 모델 박스들이 들어가있는 곳 */
-    background-color: aqua;
+    /* background-color: aqua; */
 
     display: flex;
     flex-wrap: wrap;
@@ -232,7 +251,7 @@ section {
 .model-list-box>li{
     /* 차 사진, 차 이름, 차 가격이 포함되어있는 박스  */
     
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
 
     display: flex;
     justify-content: center;
@@ -249,7 +268,7 @@ section {
 
 .mid-center{
     /* 중간의 규정 컨테이너 */
-    background-color: rgb(171, 109, 34);
+    /* background-color: rgb(171, 109, 34); */
 
     width: 100%;
 
@@ -276,12 +295,12 @@ section {
 
 
 .mid-footer {
-    background-color: rgb(129, 145, 167);
+    /* background-color: rgb(29, 108, 218); */
     width: 100%;
     height: 180px;
 
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     
 }
 
@@ -291,9 +310,12 @@ section {
 
 
 .information-wrapper{
-    background-color: #d66641;
+
+    /* background-color: #682008; */
 
     display: flex;
+    /* flex-direction: column; */
+    
     width: 100%;
     justify-content: center;
     gap: 20px;
@@ -301,41 +323,51 @@ section {
 
 .information-container{
     /* 기업정보랑 IR정보, 지속가능경영이 들어가있는 컨테이너 */
-    background-color: orange;
+    /* background-color: orange; */
 
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     
-    
+    border-right: 1px solid #ccc;
 
     width: 33%;
-    
 
+    text-align: left;
+    
+    padding: 0 10px;
+
+}
+
+.information-container>dt{
+    /* 기업정보, ir정보  */
+
+    padding: 10px 0 10px 25px ;
+
+    color: rgb(9, 9, 168);
+    font-weight: bold;
 }
 
 .information-box{
     /* 배당조회 지속가능보고서 같은 것들 들어있는 박스 */
-    background-color: blue;
+    /* background-color: blue; */
     width: 100%;
-
-    display: flex;
-    flex-wrap: wrap;    
-    justify-content: space-between;
-
     
+    /* 2열로 분할 */
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
     
+    flex-wrap: wrap;
 }
+
+.information-wrapper>:last-child{
+    border: none;
+}
+
 
 .information-box>a{
     /* 기업이념 같은 밑에 적히는 것들 */
-    margin: 10px 50px;
-
-    padding: 0;
-
-    
-    
-
+    margin: 25px;
 }
 
 
@@ -352,6 +384,7 @@ section {
     background-color: #ca3d0e;
     width: 100%;
     height: 270px;
+    
     padding: 30px 30px 0;
 
 }
@@ -370,4 +403,12 @@ section {
     width: 1200px;
     height: 170px;
     margin: 0 auto;
+}
+
+
+footer{
+    background-color: #5c0e50;
+    /* text-align: center; */
+    /* margin-top: 10px; */
+    /* padding: 40px 0; */
 }
