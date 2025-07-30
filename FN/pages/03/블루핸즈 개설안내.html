@@ -105,13 +105,25 @@
             transition: opacity 0.3s ease;
         }
 
+        p.text-right {
+            text-align: end;
+            margin-bottom: 10px;
+        }
+
         .tab-pane.active {
             display: block;
             opacity: 1;
         }
 
         h3 {
-            margin-bottom: 30px;
+            margin-top: 20px;
+
+        }
+
+        p.table-note {
+            text-align: end;
+            line-height: 28px;
+            margin-top: 15px;
         }
 
         .cost-table {
@@ -120,22 +132,29 @@
             font-size: 14px;
         }
 
-        .cost-table th,
-        .cost-table td {
-            border: 1px solid #ddd;
+        .cost-table th {
+            border: 1px solid rgb(255, 255, 255);
             padding: 8px;
             text-align: center;
-        }
-
-        .cost-table th {
             background: #002F6C;
             color: #fff;
             font-weight: normal;
         }
 
+        .cost-table td {
+            border: 1px solid #e4dcd3;
+            padding: 8px;
+            text-align: center;
+            font-weight: normal;
+            color: #626262;
+
+
+        }
+
+
         .cost-table tbody th {
             background: #e4dcd3;
-            color: #000;
+            color: black;
         }
 
         .table-note {
@@ -184,7 +203,7 @@
         }
 
         .icons div.active p {
-            color: #007fa8;
+            /* color: #007fa8; */
             font-weight: bold;
         }
 
@@ -262,9 +281,11 @@
         }
 
         .benefits-container {
+            width: 1120px;
             background: #F8F5F4;
             padding: 20px 20px;
             border-radius: 8px;
+
         }
 
         .benefits-row {
@@ -273,7 +294,7 @@
         }
 
         .benefit {
-            width: 48%;
+
             display: flex;
             align-items: flex-start;
             margin-bottom: 40px;
@@ -285,7 +306,7 @@
             height: 120px;
             margin-left: 12px;
             margin-right: 34px;
-            
+
             flex-shrink: 0;
         }
 
@@ -366,8 +387,9 @@
         </div>
 
         <div id="tab2" class="tab-pane">
-            <h2>개설 비용</h2>
+
             <h3>개설 비용</h3>
+            <p class="text-right" style="color: #626262;">※ 출처 : 24년 정보공개서</p>
             <table class="cost-table">
                 <thead>
                     <tr>
@@ -416,61 +438,83 @@
             </table>
             <p class="table-note">※ 상기 금액은 실제 지불 금액과 다를 수 있으며 인테리어 시설/장비 비용은 블루핸즈 운영 형태에 따라 차이가 있습니다.</p>
             <h3>영업 개시 이후 비용</h3>
+            <p class="text-right" style="color: #626262;">※ 출처 : 24년 정보공개서</p>
             <table class="cost-table">
                 <thead>
                     <tr>
-                        <th>구분</th>
+                        <th colspan="2">구분</th>
                         <th>지급대상</th>
                         <th>금액 (단위: 천 원)</th>
-                        <th>지급 기준</th>
+                        <th>지급 기한</th>
                         <th>반환 조건</th>
-                        <th>반환 불가 사유</th>
+                        <th>반환될 수 없는 사유</th>
                         <th>비고</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>총계</td>
+                        <th colspan="2" scope="row">총계</th>
                         <td>-</td>
-                        <td>[2,600~1,031,400]</td>
+                        <td>[2,600~1,031,400+α]</td>
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
                     </tr>
                     <tr>
-                        <th rowspan="2">가맹금</th>
-                        <td>종합 블루핸즈</td>
+                        <th rowspan="2" scope="rowgroup">가맹금</th>
+                        <th scope="row">종합<br>블루핸즈</th>
+                        <td rowspan="2">가맹본부</td>
                         <td>900~1,400/월</td>
-                        <td>익월 첫 주 목요일</td>
-                        <td>-</td>
-                        <td>브랜드 사용·경영지원·교육</td>
-                        <td>VAT 별도</td>
+                        <td rowspan="2">익월 <br>첫 주 <br>목요일</td>
+                        <td rowspan="3">반환없음</td>
+                        <td rowspan="2">브랜드 사용, <br>경영지원 및 교육</td>
+                        <td rowspan="2">VAT 별도</td>
                     </tr>
+
                     <tr>
-                        <td>전문 블루핸즈</td>
+                        <th scope="row">전문<br>블루핸즈</th>
                         <td>600~900/월</td>
-                        <td>익월 첫 주 목요일</td>
-                        <td>-</td>
-                        <td>브랜드 사용·경영지원·교육</td>
-                        <td>VAT 별도</td>
                     </tr>
                     <tr>
-                        <td>포인트 적립금</td>
-                        <td>최종 고객</td>
-                        <td>결제금액의 0.5%</td>
-                        <td>매월 넷째주 목요일</td>
-                        <td>-</td>
+                        <th colspan="2" scope="row">포인트 적립금</th>
+                        <td>해당 고객</td>
+                        <td>일반수리 결제금액의 <br>0.5%</td>
+                        <td>매월 <br>넷째주 <br>목요일</td>
                         <td>고객적립 포인트</td>
                         <td>-</td>
                     </tr>
                     <tr>
-                        <td>긴급출동 스마트폰 비용</td>
-                        <td>선택한 통신업체</td>
-                        <td>개별 계약에 따름</td>
+                        <th colspan="2" scope="row">긴급출동 스마트폰 사용비용</th>
+                        <td>가맹사업자가 선택한<br> 통신업체</td>
+                        <td colspan="4">개별 계약에 따름</td>
+                        <td>10,000원/월(VAT 별도) 기본사용료 당사 지원<br>(추가비용 업체 부담)</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="2" scope="row">영업표지 변경 등에 <br>따른 간판변경 비용</th>
+                        <td>가맹사업자가 선택한<br> 간판제작 업체</td>
+                        <td>1,000~30,000</td>
+                        <td rowspan="2" colspan="3">가맹사업자가 선택한 업체와 개별계약에 따름</td>
+                        <td>가맹본부는 경우에 따라 <br>간판비용 또는 시설장비 비용 등을 지원할 수 있음</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="2" scope="row">인테리어 시설, 장비의<br> 보수비용</th>
+                        <td>가맹사업자가 선택한 <br>시설, 장비 제공업체</td>
+                        <td>1,000~1,000,000</td>
                         <td>-</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="2" scope="row">영업배상책임 보험료</th>
+                        <td rowspan="2">가맹사업자가 선택한 <br>보험업체</td>
+                        <td rowspan="2" colspan="4">가맹점사업자가 선택한 업체와 개별계약에 따름</td>
                         <td>-</td>
-                        <td>10,000원/월(별도)</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="2" scope="row">화재보험료</th>
                         <td>-</td>
                     </tr>
                 </tbody>
@@ -535,32 +579,63 @@
                     </div>
                 </div>
             </div>
+            <div class="video-wrapper" style="width: 100%; height: ;">
+                <h2 style="margin-top: 20px; margin-bottom: 20px;">가맹점 리더십 교육</h2>
+                <div class="view-wrapper" >
+                    <div class="video-section " style=" height: 630px;width: 1120px;">
+                        <iframe style="width: 100%; height: 630px;" class="youtube_video_ratio plugin-video-apply"
+                            width="800" height="450"
+                            src="https://www.youtube.com/embed/Zam8bbhoEeY?rel=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.hyundai.com"
+                            frameborder="0" allowfullscreen="" data-vendor="youtube"
+                            title="블루핸즈 우수 대표자 교육, 블루핸즈 CEO 리더스쿨" id="widget2" data-gtm-yt-inspected-9844002_56="true"
+                            data-gtm-yt-inspected-9844002_105="true" data-gtm-yt-inspected-9844002_117="true"
+                            data-gtm-yt-inspected-9844002_119="true" data-gtm-yt-inspected-9844002_121="true"
+                            data-gtm-yt-inspected-45="true"></iframe>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- <h2>가맹점 리더십 교육</h2>
+        <div class="video-wrapper">
+            <div class="video-section">
+                <video tabindex="-1" aria-hidden="true" class="video-stream html5-main-video" webkit-playsinline=""
+                    playsinline="" controlslist="nodownload" style="width: 1120px; height: 630px; left: 0px; top: 0px;"
+                    src="blob:https://www.youtube.com/995a3152-59bd-48db-82f7-f11ba7b0a394"></video>
+            </div>
+        </div> -->
+
+
+
+
+
         </div>
 
+        <div class="arrow-container-wrapper">
+            <div class="arrow-container">
+                <a href="javascript:void(0)" style="color: #000; text-decoration: none;">
+                    <div class="arrow-text left">가맹점 소개</div>
+                </a>
 
-
-    </div>
-
-    <div class="arrow-container-wrapper">
-        <div class="arrow-container">
-            <div class="arrow-text left">가맹사업 소개</div>
-            <div class="arrow-text right">가맹점 모집</div>
+                <a href="javascript:void(0)" style="color: #000; text-decoration: none;">
+                    <div class="arrow-text right">가맹점 모집</div>
+                </a>
+            </div>
         </div>
-    </div>
 
-    <script>
-        const tabs = document.querySelectorAll('.tab-menu button');
-        const panes = document.querySelectorAll('.tab-pane');
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                panes.forEach(p => p.classList.remove('active'));
-                const target = tab.getAttribute('data-tab');
-                tab.classList.add('active');
-                document.getElementById(target).classList.add('active');
+        <script>
+            const tabs = document.querySelectorAll('.tab-menu button');
+            const panes = document.querySelectorAll('.tab-pane');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    panes.forEach(p => p.classList.remove('active'));
+                    const target = tab.getAttribute('data-tab');
+                    tab.classList.add('active');
+                    document.getElementById(target).classList.add('active');
+                });
             });
-        });
-    </script>
+        </script>
 </body>
 
 </html>
