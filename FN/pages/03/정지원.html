@@ -9,22 +9,27 @@
     <style>
         * {
             box-sizing: border-box;
+        }
+
+        body {
             margin: 0;
             padding: 0;
         }
-        a {
+
+        /* a {
             text-decoration: none;
             color:black;
-         }
+         } */
         .wrapper>header {
             border: 1px solid;
             background-color: orange;
             height: 350px;
         }
-        main>section>.main-wrapper{
+
+        main>section>.main-wrapper {
             background-color: rgb(228, 220, 209);
-            max-width:1920px;
-            min-width:900px;
+            max-width: 1920px;
+            min-width: 900px;
             /* display:flex;
             flex-direction: column;
             align-items: center; */
@@ -38,19 +43,19 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin:10px auto 0;
+            margin: 10px auto 0;
         }
 
         main>section>.main-wrapper>.main-top>.main-top-text1 {
-            margin:0px 100px;
-            width:100%;
-            max-width:1120px;
-            height:90px;
-            padding-top:35px;
+            margin: 0px 100px;
+            width: 100%;
+            max-width: 1120px;
+            height: 90px;
+            padding-top: 35px;
             font-size: 13px;
             font-weight: 500;
-            display:flex;
-            gap:10px;
+            display: flex;
+            gap: 10px;
         }
 
         main>section>.main-wrapper>.main-top>.main-top-text {
@@ -75,19 +80,20 @@
         main>section>.main-middle {
             /* border: 1px solid; */
             width: 100%;
-            max-width:1120px;
+            max-width: 1120px;
             height: 378px;
             text-align: center;
-            padding-top:50px;
-            margin:0 auto;
+            padding-top: 50px;
+            margin: 0 auto;
             /* background-color: orange; */
         }
 
         main>section>.main-middle>.main-middle-text {
             /* background-color: orange; */
             height: 188px;
-            font-weight: 400;;
-            margin:0 auto;
+            font-weight: 400;
+            ;
+            margin: 0 auto;
         }
 
         main>section>.main-middle>.main-middle-text>h2 {
@@ -97,35 +103,69 @@
         main>section>.main-middle>.main-middle-image_box {}
 
         main>section>.main-middle2 {
-            max-width:1120px;
-            width:100%;
+            max-width: 1120px;
+            width: 100%;
             height: 130px;
             padding-top: 80px;
             padding-bottom: 10px;
-            margin: 0 150px 0;
+            margin:0;
+            text-align:left !important;
         }
+
         main>section>.main-middle2>h3 {
             display: block;
+            margin: 0 150px;
         }
+
         main>section>.main-table {
-            border-collapse: collapse;
-            max-width:1130;
-            width:100%;
+            /* padding-left:100px; */
+            font-size: 14px;
+            max-width: 1120;
+            min-width: 768px;
+            width:1000px;
             margin:0 auto;
-            font-size:14px;
         }
+         main>section>.main-table>table {
+            display:inline-block;
+            align-items: center;
+            border-collapse: collapse;
+         }
+
         .main-table th {
-            background-color:rgb(228, 220, 211);
-            border:1px white;
-            padding:10px;
-            width:223.391px;
+            background-color: rgb(228, 220, 211);
+            border: 1px white;
+            padding: 10px;
+            width: 223.391px;
             font-weight: 500;
         }
+
         .main-table td {
-            border-top:1px solid rgb(228, 220, 211);
-            border-bottom:1px solid rgb(228, 220, 211);
-            border-right:1px solid rgb(228, 220, 211);
-            padding:10px;
+            border-top: 1px solid rgb(228, 220, 211);
+            border-bottom: 1px solid rgb(228, 220, 211);
+            border-right: 1px solid rgb(228, 220, 211);
+            padding: 10px;
+        }
+
+        .table-btn {
+            width: 170px;
+            height: 40px;
+            background-color: rgb(0, 44, 95);
+            color: white;
+            border: none;
+        }
+        .main-middle3{
+            max-width:1120px;
+            width:100%;
+            height:200px;
+            /* border:1px solid; */
+            margin:0 300px;
+            padding-top:80px;
+            
+        }
+        .map-image-box {
+            display:inline-block;
+            align-items: center;
+            padding:30px 300px;
         }
     </style>
 </head>
@@ -168,71 +208,69 @@
                     </div>
                 </div>
             </section>
-            <section>
+            <section class="second-section">
                 <div class="main-middle2">
-                    <h3>블루핸즈 가맹사업 공모 안내</h3>
+                    <h3 style="text-align:left;">블루핸즈 가맹사업 공모 안내</h3>
                 </div>
                 <div class="main-table">
                     <table>
-                            <tr>
-                                <th>모집기간</th>
-                                <td>· 2024년 05월 01일 (목) ~ 공모 게시일까지</td>
-                            </tr>
-                            <tr>
-                                <th>공모 지역</th>
-                                <td>· 경기 남부 (안산/안양/의왕시), 강원 강릉시, 경북 경산시<br/>(※ 상기 지역의 경계선 인접 읍,면,동까지 지원 가능)</td>
-                            </tr>
-                            <tr>
-                                <th>모집 유형</th>
-                                <td>· 대형 상용 블루핸즈 (수소/전기버스 작업장 포함)</td>
-                            </tr>
-                            <tr>
-                                <th>정비업 구분</th>
-                                <td>· 자동차관리법 시행령 기준 종합, 전문 정비업</td>
-                            </tr>
-                            <tr>
-                                <th>필수 사항</th>
-                                <td>· 버스 수리 역량 확보 <br/>· 전동화 (수소/전기) 스톨 1개 이상 보유</td>
-                            </tr>
-                            <tr>
-                                <th>시설환경 기준</th>
-                                <td>· 아래 2type 중 택일 가능<br/>① 일반 거점 : 스톨 6개 이상, 주차공간 확보 필수<br/>② 소규모 거점 : 스톨 3개 이상, 주차공간 확보 필수<br/>(※ 스톨 규격 : 15X5M, 주차 대수 : 스톨 개수 100% 이상 )</td>
-                            </tr>
-                            <tr>
-                                <th>지원방법</th>
-                                <td>· 신청서 작성 후 하단 메일 주소로 송부 (파일은 pdf 형태로 첨부)<br/>· 이메일 : bluehands@hyundai.com<br/>
-                                · 제출 서류(pdf 파일) <button>가맹사업 신청서 다운로드</button><br/>
-                                ② 블루핸즈 가맹사업 신청서 1부<br/>
-                                ③ 가족관계증명서 1부 (주민번호 뒷자리 마킹)<br/>
-                                ④ 자동차정비 관련 국가자격증 (보유 시)<br/>
+                        <tr>
+                            <th>모집기간</th>
+                            <td>· 2024년 05월 01일 (목) ~ 공모 게시일까지</td>
+                        </tr>
+                        <tr>
+                            <th>공모 지역</th>
+                            <td>· 경기 남부 (안산/안양/의왕시), 강원 강릉시, 경북 경산시<br />(※ 상기 지역의 경계선 인접 읍,면,동까지 지원 가능)</td>
+                        </tr>
+                        <tr>
+                            <th>모집 유형</th>
+                            <td>· 대형 상용 블루핸즈 (수소/전기버스 작업장 포함)</td>
+                        </tr>
+                        <tr>
+                            <th>정비업 구분</th>
+                            <td>· 자동차관리법 시행령 기준 종합, 전문 정비업</td>
+                        </tr>
+                        <tr>
+                            <th>필수 사항</th>
+                            <td>· 버스 수리 역량 확보 <br />· 전동화 (수소/전기) 스톨 1개 이상 보유</td>
+                        </tr>
+                        <tr>
+                            <th>시설환경 기준</th>
+                            <td>· 아래 2type 중 택일 가능<br />① 일반 거점 : 스톨 6개 이상, 주차공간 확보 필수<br />② 소규모 거점 : 스톨 3개 이상, 주차공간 확보
+                                필수<br />(※ 스톨 규격 : 15X5M, 주차 대수 : 스톨 개수 100% 이상 )</td>
+                        </tr>
+                        <tr>
+                            <th>지원방법</th>
+                            <td>· 신청서 작성 후 하단 메일 주소로 송부 (파일은 pdf 형태로 첨부)<br /><a href="javascript:void(0)">· 이메일 :
+                                    bluehands@hyundai.com</a><br />
+                                · 제출 서류(pdf 파일) <button class="table-btn">가맹사업 신청서 다운로드</button><br />
+                                ② 블루핸즈 가맹사업 신청서 1부<br />
+                                ③ 가족관계증명서 1부 (주민번호 뒷자리 마킹)<br />
+                                ④ 자동차정비 관련 국가자격증 (보유 시)<br />
                                 ⑤ 가맹사업 희망 부지 확보 서류 (보유 시 / 토지등기부등본, 계약서 등)
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>제한 사항</th>
-                                <td>· 기존 블루핸즈 가맹사업자 보호를 위해, 신청서 기준 가맹사업 희망 위치와 인근 블루핸즈간 직선거리(반경) 1km이내일 경우 블루핸즈 개소가 불가합니다.<br/>
-                                    · 직영 하이테크센터와 직선거리(반경) 1km 이내일 경우에도 블루핸즈 개소가 불가합니다.</td>
-                            </tr>
-                            <tr>
-                                <th>문의 사항</th>
-                                <td>· 공모 관련 문의사항이 있으신 경우 02-2058-7165로 연락주세요.</td>
-                            </tr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>제한 사항</th>
+                            <td>· 기존 블루핸즈 가맹사업자 보호를 위해, 신청서 기준 가맹사업 희망 위치와 인근 블루핸즈간 직선거리(반경) 1km이내일 경우 블루핸즈 개소가
+                                불가합니다.<br />
+                                · 직영 하이테크센터와 직선거리(반경) 1km 이내일 경우에도 블루핸즈 개소가 불가합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>문의 사항</th>
+                            <td>· 공모 관련 문의사항이 있으신 경우 02-2058-7165로 연락주세요.</td>
+                        </tr>
                     </table>
-
-
+                    <p style="color:gray;font-size:16px;">※ 블루핸즈 형태 및 시설환경 기준은 『가맹사업 소개』 화면 참조 바랍니다.</p>
                 </div>
 
                 <div class="main-middle3">
                     <h3>경계선 인접 읍/면/동이란?</h3>
-                </div>
-                <div class="main-middle4">
                     <p>->공모 지역으로 선정된 시/군/구 지역 경계선에 바로 맞닿아있는 읍/면/동</p>
                     <P>(ex.충남 당진시의 경우 대산읍/지곡면/음암면 등 가능,팔봉면/신창면 등은 불가)</P>
                 </div>
-
-
                 <div class="map-image-box">
-                    <img src="" alt="지도">
+                    <img src="../03/css/지도.png" alt="지도">
                 </div>
 
                 <div class="prev-bar">
