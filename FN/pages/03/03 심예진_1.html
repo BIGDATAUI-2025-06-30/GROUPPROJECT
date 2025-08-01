@@ -7,6 +7,55 @@
     <title>Document</title>
 
     <style>
+        .stickyheader_yj {
+            background-color: rgb(246, 243, 242, 0.9);
+            max-width: 1400px;
+            height: 53px;
+            display: flex;
+            padding: 0 30px;
+            margin: 0 auto;
+            text-align: center;
+            align-items: center;
+            /* justify-content: space-between; */
+            list-style-type: none;
+        }
+
+        .stickyheader_yj>ul>li {
+            width: 190px;
+        }
+
+        .stickyheader_yj>li {
+            width: 256px;
+            text-align: left;
+        }
+
+        .stickyheader_yj>li>.hands_yj {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;   
+        }
+
+        .stickyheader_yj>.hands-list_yj {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            list-style-type: none;
+            column-gap: 25px;
+            margin-left: 90px;
+            padding: 8px 0 9px;
+            text-align: left;
+        }
+
+        .stickyheader_yj>ul>li>a {
+            text-decoration: none;
+            color: rgb(102, 102, 102);
+            font-size: 15px;
+        }
+
+        .stickyheader_yj>ul>li>.now-hands_yj {
+            color: #007fa8;
+        }
 
         .banner_yj {
             width: 100%;
@@ -140,7 +189,6 @@
             justify-content: center;
             padding: 0 14px;
         }
-        
     </style>
 
 </head>
@@ -148,6 +196,21 @@
 <body style="margin: 0;">
 
     <!-- header -->
+
+    <!-- stickyheader -->
+    <div style="background-color: rgb(246, 243, 242, 0.9);">
+        <ul class="stickyheader_yj">
+            <li>
+                <a class="hands_yj" href="javascript:void(0)">블루핸즈 가맹사업</a>
+            </li>
+            <ul class="hands-list_yj">
+                <li> <a href="javascript:void(0)">가맹사업 소개</a> </li>
+                <li> <a href="javascript:void(0)">가맹점 개설 안내</a> </li>
+                <li> <a href="javascript:void(0)">가맹점 모집</a> </li>
+                <li> <a class="now-hands_yj" href="javascript:void(0)">유형별 블루핸즈</a> </li>
+            </ul>
+        </ul>
+    </div>
 
 
     <!-- main -->
