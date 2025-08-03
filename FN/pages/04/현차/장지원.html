@@ -80,7 +80,7 @@
             left: 50%;
             transform: translateX(-50%);
             width: 100%;
-            min-height: calc(100% - 1381px);
+            min-height: calc(100% - 1333px);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -113,8 +113,8 @@
         .process {
             background-color: #fff;
             max-width: 1280px;
-            margin: 80px auto;
-            padding: 0 20px;
+            margin: 0 auto;
+            padding-left: 60px;
             box-sizing: border-box;
         }
 
@@ -166,8 +166,10 @@
             font-size: 15px;
             line-height: 1.6;
             color: #333;
-            margin: 20px 0;
-            margin-left: 9px;
+            margin: 0 auto;
+            padding-left: 60px;
+            max-width: 1280px;
+            margin-top: 80px;
         }
 
 
@@ -210,22 +212,29 @@
         }
 
         .myhyundai-box {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 60px auto;
             border: 1px solid #ddd;
             padding: 40px;
             background-color: #fff;
         }
 
-        /* 로고 + 설명 배치 */
         .myhyundai-container {
             display: flex;
-            align-items: center;
+            position: relative;
+            align-items: flex-start;
+            justify-content: center;
             gap: 40px;
-            /* 간격 조절 */
         }
 
-        /* 로고 영역 */
+        .myhyundai-logo {
+            flex: none;
+            display: flex;
+            align-items: center;
+            margin-left: -30px;
+            margin-top: 20px;
+        }
+
         .myhyundai-logo img {
             width: 120px;
             height: 120px;
@@ -233,7 +242,16 @@
             object-fit: contain;
         }
 
-        /* 텍스트 콘텐츠 */
+        .myhyundai-content {
+            width: 788px;
+            height: 215px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: left;
+            margin-left: 30px;
+        }
+
         .myhyundai-content h3 {
             font-size: 1.4rem;
             margin-bottom: 10px;
@@ -246,24 +264,21 @@
         }
 
         .myhyundai-content ul {
-            margin: 0 0 20px 0;
-            padding-left: 0;
+            margin: 0;
+            padding: 0;
         }
 
         .myhyundai-content li {
             list-style: none;
+            padding: 0;
+            margin-bottom: 5px;
             position: relative;
-            padding-left: 1.2em;
-            margin-bottom: 4px;
         }
 
         .myhyundai-content li::before {
-            content: "-";
-            position: absolute;
-            left: 0;
+            content: none;
         }
 
-        /* 버튼 */
         .down-btn {
             background-color: #002c5f;
             color: #fff;
@@ -271,6 +286,7 @@
             border: none;
             font-size: 1rem;
             cursor: pointer;
+            align-self: flex-start;
             transition: background 0.2s ease-in-out;
         }
     </style>
@@ -357,14 +373,14 @@
             <section class="myhyundai-box">
                 <div class="myhyundai-container">
                     <div class="myhyundai-logo">
-                        <img src="hyundai-logo.png" alt="현대 로고" />
+                        <img src="./image/현대로고.avif" alt="현대 로고" />
                     </div>
                     <div class="myhyundai-content">
                         <h3>마이 현대 (myHyundai)</h3>
                         <p>차량 제어부터 관리, 충전, 멤버십까지. 모든 것을 한 곳에서 해결하세요.</p>
                         <ul>
-                            <li>* 항목1</li>
-                            <li>* 항목2</li>
+                            <li>* 마이현대는 기존 블루링크 서비스와 블루멤버스/차량정비/충전/멤버십 포인트 등을 제공하던<br> 마이현대가 만나 더욱 강력해진 App입니다.</li>
+                            <li>* 개인 회원 전용 서비스 입니다.</li>
                         </ul>
                         <button class="down-btn">앱 다운로드</button>
                     </div>
