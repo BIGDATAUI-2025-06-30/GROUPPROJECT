@@ -7,8 +7,41 @@
     <title>Document</title>
 
     <style>
-        .stickyheader_yj {
+        .main-header {
+            height: 90px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            /* z-index: 1000; */
+        }
+
+        .stickyheader-wrapper_yj {
             background-color: rgb(246, 243, 242, 0.9);
+            border-top-width: 1.2px;
+            border-top-color: rgb(229, 229, 229);
+            border-top-style: solid;
+            border-bottom-width: 1.2px;
+            border-bottom-color: rgb(229, 229, 229);
+            border-bottom-style: solid;
+            /* position: fixed;
+            z-index: 1000; */
+        }
+
+        .show{
+            /* nav 보여주기 */
+            /* height : 53px; */
+            background-color: rgb(246, 243, 242, 0.9);
+        }   
+        .hide{
+            /* nav 숨기기 */
+            height : 0px;
+        }
+
+        .stickyheader_yj {
             max-width: 1400px;
             height: 53px;
             display: flex;
@@ -27,6 +60,7 @@
         .stickyheader_yj>li {
             width: 256px;
             text-align: left;
+            border-right: 1.2px solid rgb(229, 229, 229);
         }
 
         .stickyheader_yj>li>.hands_yj {
@@ -34,7 +68,11 @@
             color: black;
             font-size: 16px;
             font-weight: 600;
-            letter-spacing: 1px;   
+            letter-spacing: 1px;
+        }
+
+        .stickyheader_yj>li>.hands_yj::before {
+            left: var(1.2px)
         }
 
         .stickyheader_yj>.hands-list_yj {
@@ -196,9 +234,12 @@
 <body style="margin: 0;">
 
     <!-- header -->
+    <header class="main-header_yj">
+        <h1>메인 헤더</h1>
+    </header>
 
     <!-- stickyheader -->
-    <div style="background-color: rgb(246, 243, 242, 0.9);">
+    <div class="stickyheader-wrapper_yj">
         <ul class="stickyheader_yj">
             <li>
                 <a class="hands_yj" href="javascript:void(0)">블루핸즈 가맹사업</a>
@@ -273,7 +314,7 @@
                 </p>
             </div>
             <!-- image -->
-            <div>
+            <div style="padding-bottom: 120px;">
                 <img src="./img1_yj.jpg" alt="">
             </div>
         </div>
@@ -283,6 +324,29 @@
 
     <!-- footer -->
 
+    <script>
+
+        const navEl = document.querySelector('.stickyheader-wrapper_yj');
+        let scrollState = 0;
+        document.addEventListener('scroll', () => {
+            
+            if (window.scrollY >= 10 && scrollState > window.scrollY) {
+                navEl.classList.remove('hide');
+                navEl.classList.add('show');
+            }
+            else if (window.scrollY >= 3) {
+                navEl.classList.remove('hide');
+                navEl.classList.add('show');
+            }
+            else {
+                navEl.classList.remove('show');
+                navEl.classList.add('hide');
+            }
+
+            scrollState = window.scrollY;
+        })
+
+    </script>
 
 </body>
 
